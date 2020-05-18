@@ -83,3 +83,13 @@ Things you may want to cover:
 ### Association
  - has_many :videos_tags
  - has_many :videos, through: :videos_tags
+
+ ## videos_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|video_id|reference|null: false, foreign_key: true|
+|tag_id|reference|null: false, foreign_key: true|
+
+### Association
+ - belongs_to :video
+ - belongs_to :tag
