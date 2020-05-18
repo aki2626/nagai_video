@@ -1,14 +1,48 @@
 .header {
+  font-size: 14px;
+  height: 28px;
   display: flex;
   background-color: #404040;
   color: white;
   justify-content: space-between;
+  line-height: 28px;
   .left_box {
     display: flex;
     list-style: none;
+    &__list {
+      padding: 0 5px;
+      &--link {
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
   .right_box {
     display: flex;
     list-style: none;
+    &__list {
+      padding: 0 5px;
+      &--link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .header_menu {
+      position: relative;
+      .menu {
+        background-color: red;
+        position: absolute;
+        right: 0px;
+        top: 28px;
+        width: 120px;
+        &__list {
+          padding-left: 10px;
+          &--link {
+            text-decoration: none;
+            color: white;
+          }   
+        }
+      }
+    }
   }
 }

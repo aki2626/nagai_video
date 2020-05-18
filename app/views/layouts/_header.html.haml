@@ -1,22 +1,41 @@
 .header
   %ul.left_box
-    %li.left_box__toppage
-      toppageへ
-    %li.left_box__video
-      動画
+    %li.left_box__list
+      =link_to "#" , class: "left_box__list--link" do
+        トップページへ
+    %li.left_box__list
+      =link_to "#" , class: "left_box__list--link" do
+        動画
   %ul.right_box
-    %li.right_box__user_image
-      (-o-)
-    %li.right_box__user_name
-      user
-    %li.right_box__create_video
-      動画投稿
-    %li.right_box__ranking
-      ランキング
+    %li.right_box__list
+      =link_to "#" , class: "right_box__list--link" do
+        (-o-)
+    %li.right_box__list
+      =link_to "#" , class: "right_box__list--link" do
+        ジャパニーズさん
+    %li.right_box__list
+      =link_to "#" , class: "right_box__list--link" do
+        動画投稿
+    %li.right_box__list
+      =link_to "#" , class: "right_box__list--link" do
+        ランキング
     %li.header_menu
-      メニュー
-      %ul.menu_list
-        %li.menu_list__mulist
-          マイリスト
+      メニュー▼
+      %ul.menu
+        %li.menu__list
+          =link_to "#" , class: "menu__list--link" do
+            マイリスト
+        %li.menu__list
+          =link_to "#" , class: "menu__list--link" do
+            フォロー
+        %li.menu__list
+          =link_to "#" , class: "menu__list--link" do
+            投稿動画
+        %li.menu__list
+          =link_to "#" , class: "menu__list--link" do
+            アカウント設定
+        %li.menu__list
+          =link_to "#" , class: "menu__list--link" do
+            ログアウト
 
     
