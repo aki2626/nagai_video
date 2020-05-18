@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background-color: #404040;
+  color: white;
+  justify-content: space-between;
+  .left_box {
+    display: flex;
+    list-style: none;
+  }
+  .right_box {
+    display: flex;
+    list-style: none;
+  }
+}
