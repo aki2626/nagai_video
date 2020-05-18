@@ -93,3 +93,15 @@ Things you may want to cover:
 ### Association
  - belongs_to :video
  - belongs_to :tag
+
+##  commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|user_id|reference|null: false, foreign_key: true|
+|video_id|reference|null: false, foreign_key: true|
+
+### Association
+ - belongs_to :user
+ - belongs_to :video
+ 
