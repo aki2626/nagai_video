@@ -2,6 +2,7 @@
   width: $main_content_width;
   margin: auto;
   padding-top: 10px;
+  background-color: #f8f8f8f8;
   .show_header {
     display: flex;
     justify-content: space-between;
@@ -59,6 +60,30 @@
         &--icon {
           font-size: 20px;
         }
+      }
+    }
+  }
+  .tags_area {
+    display: flex;
+    font-size: 14px;
+    .tag_edit {
+      background-color: #d2d2d2;
+      border-radius: 30px;
+      padding: 0 8px;
+      color: white;
+      line-height: 20px;
+    }
+    .tags_lists {
+      display: flex;
+      flex-wrap: wrap;
+      &__tag {
+        text-decoration: none;
+        margin: 5px;
+        padding: 0 8px;
+        color:black;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid #d2d2d2; 
       }
     }
   }
