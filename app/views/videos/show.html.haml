@@ -1,0 +1,56 @@
+.show_main
+  .show_header
+    .show_header__title
+      鷲崎健 演出「神戸に帰った男」
+    .search_area
+      %form
+        .form_area
+          %input.form_area__text{type: "text", placeholder: "動画を検索"}
+          %label.form_area__btn
+            = icon('fas', 'search')
+            %input.form_area__btn--display{type: "submit", value: ""}
+  .explain
+    2h-2013/12/27
+    試しうP
+    「I Love You」のある世界
+    .text_turnback
+      動画説明文を閉じる
+  .information_lists
+    .user_information.information_list
+      .user_information__image
+      .user_information__name
+        永井
+      .user_information__follow
+        = icon('far', 'star', class: "user_information__follow--icon")
+        = link_to "#" do
+          フォロー
+    .information_list
+      .information_list__title
+        投稿日時
+      .information_list__text
+        2019/01/09 19:36
+    .information_list
+      .information_list__title
+        再生数
+      .information_list__text
+        70,999
+    .information_list
+      .information_list__title
+        コメント数
+      .information_list__text
+        970
+    .information_list
+      .information_list__title
+        マイリスト数
+      .information_list__text
+        179
+    .information_list
+      .information_list__title
+        ジャンル
+      .information_list__text
+        ゲーム
+  .tags_area
+    ここにタグが並びます。
+  .video_area
+    ここに動画を写します。
+  

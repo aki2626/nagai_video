@@ -1,0 +1,65 @@
+.show_main{
+  width: $main_content_width;
+  margin: auto;
+  padding-top: 10px;
+  .show_header {
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .search_area {
+      margin: auto 0 auto 10px;  
+      .form_area {
+        display: flex;
+        &__btn {
+          background-color: tan;
+          padding: 5px;
+          &--display {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .explain {
+    .text_turnback {
+      text-align: right;
+    }
+  }
+  .information_lists {
+    display: flex;
+    font-size: 14px;
+    .information_list {
+      border-right: 1px solid #a0a0a0;
+      padding: 10px;
+      &__title {
+        color:gray;
+      }
+      &__text {
+        font-weight: bold;;
+      }
+    }
+    .user_information {
+      display: flex;
+      &__name {
+        font-weight: bold;
+        line-height: auto;
+      }
+      &__image {
+        height: 40px;
+        width: 40px;
+        background-color: tomato;
+      }
+      &__follow {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        &--icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
