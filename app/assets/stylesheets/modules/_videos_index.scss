@@ -1,0 +1,28 @@
+.header {
+  height:96px;
+  width: 600px;
+  margin: 5px auto 0px;
+  background-color: aqua;
+  .header_top {
+    width: 100%;
+    background-color: cornsilk;
+    height: 30px;
+  }
+  .category_area {
+    width: 100%;
+    background-color: crimson;
+    height: 66px;
+  }
+}
+.main {
+  height:200px;
+  width: 600px;
+  margin: auto;
+  background-color: blueviolet;
+}
+.footer {
+  height: 100px;
+  width: 600px;
+  margin: auto;
+  background-color: chartreuse;
+}
