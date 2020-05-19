@@ -1,8 +1,96 @@
 .header
   .header_top
-    nagai_video
+    .header_top__title
+      nagai_video
+    .search_area
+      %form
+        .form_area
+          %input.form_area__text{type: "text", placeholder: "動画を検索"}
+          %label.form_area__btn
+            = icon('fas', 'search')
+            %input.form_area__btn--display{type: "submit", value: ""}
   .category_area
     カテゴリ選択部分
 .main
-
-.footer
+  .block
+    .title_area 
+      .title_area__text
+        ランキング
+      = link_to "#", class: "title_area__link" do
+        もっと見る
+    .movies
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル 
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+  .block
+    .title_area 
+      .title_area__text
+        視聴履歴
+      = link_to "#", class: "title_area__link" do
+        もっと見る
+    .movies
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル 
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+  .block
+    .title_area 
+      .title_area__text
+        新着動画
+      = link_to "#", class: "title_area__link" do
+        もっと見る
+    .movies
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル  
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル 
+      .movie
+        .movie__thumbnail
+        .movie__title
+          タイトル
+.footer 

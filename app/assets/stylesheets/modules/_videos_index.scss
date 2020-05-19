@@ -1,28 +1,66 @@
 .header {
   height:96px;
-  width: 600px;
+  width: 1020px;
   margin: 5px auto 0px;
   background-color: aqua;
   .header_top {
     width: 100%;
     background-color: cornsilk;
-    height: 30px;
+    height: 50px;
+    display: flex;
+    &__title {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .search_area {
+      margin: auto 0 auto 10px;  
+      .form_area {
+        display: flex;
+        &__btn {
+          background-color: tan;
+          padding: 5px;
+          &--display {
+            display: none;
+          }
+        }
+      }
+    }
   }
   .category_area {
     width: 100%;
-    background-color: crimson;
+    background-color: skyblue;
     height: 66px;
   }
 }
 .main {
-  height:200px;
-  width: 600px;
+  width: 1020px;
   margin: auto;
-  background-color: blueviolet;
+  background-color: bisque;
+  .block {
+    .title_area {
+      display: flex;
+    }
+    .movies {
+      display: flex;
+      flex-wrap: wrap;
+      .movie {
+        background-color: whitesmoke;
+        margin: 10px;
+        &__thumbnail {
+          background-color: darkorange;
+          height: 128px;
+          width: 218px;
+        }
+        &__title {
+
+        }
+      }
+    }
+  }
 }
 .footer {
   height: 100px;
-  width: 600px;
+  width: 1020px;
   margin: auto;
-  background-color: chartreuse;
+  background-color: grey;
 }
