@@ -5,7 +5,7 @@
   background-color: aqua;
   .header_top {
     width: 100%;
-    background-color: cornsilk;
+    background-color: $main_white_color;
     height: 50px;
     display: flex;
     &__logo {
@@ -28,7 +28,7 @@
   }
   .categorys {
     width: 100%;
-    background-color: skyblue;
+    background-color: $white_brawn;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -38,13 +38,15 @@
       height: 20px;
       margin: 5px 0 0 5px;
       padding: 3px 5px;
+      text-decoration: none;
+      color:black;
     }
   }
 }
 .main {
   width: 1020px;
   margin: auto;
-  background-color: bisque;
+  background-color: $main_white_color;
   .block {
     padding: 10px;
     .title_area {
@@ -65,25 +67,44 @@
       .movie {
         background-color: whitesmoke;
         margin: 10px;
+        text-decoration: none;
+        color: black;
         &__thumbnail {
           background-color: darkorange;
           height: 128px;
           width: 218px;
         }
         &__title {
-
         }
       }
     }
   }
 }
 .footer {
-  height: 100px;
-  width: 1020px;
-  margin: auto;
-  background-color: grey;
-  &__logo {
-    font-size: 28px;
-    font-weight: bold;
+  background-color: $main_brawn_color;
+  .footer_area {
+    height: 100px;
+    width: 1020px;
+    margin: auto;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    &__logo {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 10px 0 0;
+    }
+    .footer_right {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      &__link {
+        padding: 7px;
+        font-size: 14px; 
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 }

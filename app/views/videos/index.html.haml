@@ -10,13 +10,13 @@
             = icon('fas', 'search')
             %input.form_area__btn--display{type: "submit", value: ""}
   .categorys
-    .categorys__category
+    =link_to "#", class:"categorys__category" do
       TOP
-    .categorys__category
+    =link_to "#", class:"categorys__category" do
       エンターテイメント
-    .categorys__category
+    =link_to "#", class:"categorys__category" do
       ラジオ
-    .categorys__category
+    =link_to "#", class:"categorys__category" do
       音楽
 .main
   .block
@@ -26,23 +26,23 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
+        .movie__thumbnail
+        .movie__title
+          タイトル    
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
-        .movie__thumbnail
-        .movie__title
-          タイトル 
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
@@ -53,23 +53,23 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
+        .movie__thumbnail
+        .movie__title
+          タイトル    
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
-        .movie__thumbnail
-        .movie__title
-          タイトル 
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
@@ -80,26 +80,49 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
+        .movie__thumbnail
+        .movie__title
+          タイトル    
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
           タイトル  
-      .movie
+      =link_to "#", class:"movie" do
         .movie__thumbnail
         .movie__title
-          タイトル 
-      .movie
-        .movie__thumbnail
-        .movie__title
-          タイトル
+          タイトル  
 .footer 
-  .footer__logo
-    nagai_video
+  .footer_area
+    .footer_area__logo
+      nagai_video
+    .footer_right
+      = link_to "#", class: "footer_right__link" do
+        ご意見・ご要望
+      = link_to "#", class: "footer_right__link" do
+        不具合報告
+      = link_to "#", class: "footer_right__link" do
+        ヘルプ
+      = link_to "#", class: "footer_right__link" do
+        動作環境
+      = link_to "#", class: "footer_right__link" do
+        利用規約
+      = link_to "#", class: "footer_right__link" do
+        運営会社
+      = link_to "#", class: "footer_right__link" do
+        権利侵害に関する動画投稿ガイドライン
+      = link_to "#", class: "footer_right__link" do
+        動画に使用できる音源の検索
+      = link_to "#", class: "footer_right__link" do
+        フィッシング詐欺にご注意ください
+      = link_to "#", class: "footer_right__link" do
+        広告出稿に関するお問い合わせ
+
