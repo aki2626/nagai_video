@@ -1,0 +1,110 @@
+.header {
+  height:96px;
+  width: $main_content_width;
+  margin: 5px auto 0px;
+  background-color: aqua;
+  .header_top {
+    width: 100%;
+    background-color: $main_white_color;
+    height: 50px;
+    display: flex;
+    &__logo {
+      font-size: $logo_size;
+      font-weight: bold;
+    }
+    .search_area {
+      margin: auto 0 auto 10px;  
+      .form_area {
+        display: flex;
+        &__btn {
+          background-color: tan;
+          padding: 5px;
+          &--display {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .categorys {
+    width: 100%;
+    background-color: $white_brawn;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    &__category {
+      background-color: white;
+      line-height: 20px;
+      height: 20px;
+      margin: 5px 0 0 5px;
+      padding: 3px 5px;
+      text-decoration: none;
+      color:black;
+    }
+  }
+}
+.main {
+  width: $main_content_width;
+  margin: auto;
+  background-color: $main_white_color;
+  .block {
+    padding: 10px;
+    .title_area {
+      display: flex;
+      align-items: center;
+      &__text {
+        font-size: 20px;
+      }
+      &__link {
+        margin-left: 10px;
+        text-decoration: none;
+        color: #909090
+      }
+    }
+    .movies {
+      display: flex;
+      flex-wrap: wrap;
+      .movie {
+        background-color: whitesmoke;
+        margin: 10px;
+        text-decoration: none;
+        color: black;
+        &__thumbnail {
+          background-color: darkorange;
+          height: 128px;
+          width: 218px;
+        }
+        &__title {
+        }
+      }
+    }
+  }
+}
+.footer {
+  background-color: $main_brawn_color;
+  .footer_area {
+    height: 100px;
+    width: $main_content_width;
+    margin: auto;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    &__logo {
+      font-size: $logo_small_size;
+      font-weight: bold;
+      margin: 10px 10px 0 0;
+    }
+    .footer_right {
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      &__link {
+        padding: 7px;
+        font-size: 14px; 
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
