@@ -1,6 +1,6 @@
 .header {
   height:96px;
-  width: 1020px;
+  width: $main_content_width;
   margin: 5px auto 0px;
   background-color: aqua;
   .header_top {
@@ -9,7 +9,7 @@
     height: 50px;
     display: flex;
     &__logo {
-      font-size: 32px;
+      font-size: $logo_size;
       font-weight: bold;
     }
     .search_area {
@@ -44,7 +44,7 @@
   }
 }
 .main {
-  width: 1020px;
+  width: $main_content_width;
   margin: auto;
   background-color: $main_white_color;
   .block {
@@ -84,14 +84,14 @@
   background-color: $main_brawn_color;
   .footer_area {
     height: 100px;
-    width: 1020px;
+    width: $main_content_width;
     margin: auto;
     color: white;
     padding: 15px 0;
     display: flex;
     justify-content: center;
     &__logo {
-      font-size: 28px;
+      font-size: $logo_small_size;
       font-weight: bold;
       margin: 10px 10px 0 0;
     }
