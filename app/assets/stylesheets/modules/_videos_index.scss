@@ -26,10 +26,19 @@
       }
     }
   }
-  .category_area {
+  .categorys {
     width: 100%;
     background-color: skyblue;
-    height: 66px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    &__category {
+      background-color: white;
+      line-height: 20px;
+      height: 20px;
+      margin: 5px 0 0 5px;
+      padding: 3px 5px;
+    }
   }
 }
 .main {
@@ -37,8 +46,18 @@
   margin: auto;
   background-color: bisque;
   .block {
+    padding: 10px;
     .title_area {
       display: flex;
+      align-items: center;
+      &__text {
+        font-size: 20px;
+      }
+      &__link {
+        margin-left: 10px;
+        text-decoration: none;
+        color: #909090
+      }
     }
     .movies {
       display: flex;
