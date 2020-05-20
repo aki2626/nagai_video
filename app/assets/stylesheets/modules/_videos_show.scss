@@ -87,4 +87,35 @@
       }
     }
   }
+  .main_contents {
+    height: 440px;
+    width: 1024px;
+    display: flex;
+    .left_contents {
+      height: 100%;
+      width: 640px;
+      .video_player {
+        background-color: $white_brawn;
+        height: 360px;
+      }
+      .video_control {
+        height: 36px;
+        background-color: $main_brawn_color;
+      }
+      .comment_create {
+        height: 32px;
+      }
+    }
+    .right_contents {
+      height: 100%;
+      width: 384px;
+      .register_area {
+        height: 44px;
+        background-color: white;
+      }
+      .relation_movies {
+        height: calc(100% - 44px);
+      }
+    }
+  }
 }
