@@ -64,10 +64,58 @@
       =video_tag("/videos/sample2.mp4", autoplay: true, class: "video_player")
       .video_control
         ここにいろんなアイコンを入れます。
-      .comment_create
-        コメントの作成
+      %form
+        .comment_create
+          %input.comment_create__form{type: "text", placeholder: "コメント"}
+          %input.comment_create__btn{type: "submit", value: "コメントする"}
     .right_contents
       .register_area
-        マイリストとか入れます。
+        .left_box
+          = link_to "#", class: "left_box__icon" do
+            = icon('fas','folder')
+          = link_to "#", class: "left_box__icon" do
+            = icon('fas','folder-plus')
+        .right_box
+          = link_to "#", class: "right_box__icon" do
+            = icon('fab','twitter-square', class: "right_box__icon--twitter")
+          = link_to "#", class: "right_box__icon" do
+            = icon('fab','facebook-square', class: "right_box__icon--facebook")
+          = link_to "#", class: "right_box__icon" do
+            = icon('fab','line', class: "right_box__icon--line")
+          = link_to "#", class: "right_box__icon" do
+            = icon('fas','share-alt-square', class: "right_box__icon--share")
       .relation_movies
-        ここに関連動画が並ぶようにします。
+        .movie_area
+          =link_to "#", class:"movie_thumbnail" do
+            サムネイル
+          .movie_information
+            .movie_information__created_at
+              2015/5/17 6:00 投稿
+            .movie_information__name
+              MHD モンハンどうでしょうR
+            .detail_information
+              .detail_information__views_number
+                ▶︎ 3.5万
+              .detail_information__comments
+                =icon('fas', 'comment-alt')
+                583
+              .detail_information__mylists
+                =icon('fas', 'folder')
+                82
+        .movie_area
+          =link_to "#", class:"movie_thumbnail" do
+            サムネイル
+          .movie_information
+            .movie_information__created_at
+              2015/5/17 6:00 投稿
+            .movie_information__name
+              MHD モンハンどうでしょうR
+            .detail_information
+              .detail_information__views_number
+                ▶︎ 3.5万
+              .detail_information__comments
+                =icon('fas', 'comment-alt')
+                583
+              .detail_information__mylists
+                =icon('fas', 'folder')
+                82

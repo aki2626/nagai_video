@@ -91,9 +91,11 @@
     height: 440px;
     width: 1024px;
     display: flex;
+    border: 1px solid #dddddd;
     .left_contents {
       height: 100%;
       width: 640px;
+      border-right: 1px solid gray;
       .video_player {
         background-color: $white_brawn;
         height: 360px;
@@ -104,6 +106,15 @@
       }
       .comment_create {
         height: 32px;
+        display: flex;
+        &__form{
+          width: 540px;
+        }
+        &__btn{
+          background-color: blue;
+          color: white;
+          width: 100px;
+        }
       }
     }
     .right_contents {
@@ -112,9 +123,78 @@
       .register_area {
         height: 44px;
         background-color: white;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd;
+        .left_box {
+          display: flex;
+          &__icon {
+            text-decoration: none;
+            color:black;
+            line-height: 44px;
+            margin: 0 3px;
+            font-size: 28px;
+          }
+        }
+        .right_box {
+          display: flex;
+          &__icon {
+            text-decoration: none;
+            line-height: 44px;
+            margin: 0 3px;
+            font-size: 28px;
+            &--twitter {
+              color: aqua;
+            }
+            &--facebook {
+              color: #000099;
+            }
+            &--line {
+              color: #99FF66;
+            }
+            &--share {
+              color: gray;
+            }
+          }
+        }
       }
       .relation_movies {
         height: calc(100% - 44px);
+        .movie_area {
+          display: flex;
+          width: 360px;
+          height: 74px;
+          margin: 2px;
+          .movie_thumbnail {
+            width: 130px;
+            height:74px;
+            background-color: blue;
+          }
+          .movie_information {
+            margin: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            &__created_at {
+              font-size: 12px;
+            }
+            &__name {
+            }
+            .detail_information {
+              display: flex;
+              font-size: 12px;
+              &__views_number {
+                margin-right:  4px;
+              }
+              &__comments {
+                margin-right: 4px;
+              }
+              &__mylists {
+                margin-right: 4px;
+              }
+            }
+          }
+        }
       }
     }
   }
