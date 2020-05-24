@@ -9,12 +9,34 @@
   %form
     .video_input
       .video_input__text
-        動画を選択してください
-      %input.video_input__form{type: "file"}
+        動画
+      %label{class: "video_input__form"}
+        動画を選択して下さい
+        %input.video_input__form--display{type: "file"}
     .video_thumbnail
+      .video_thumbnail__text
+        サムネイルを選択して下さい。
+      %label{class: "video_input__form"}
+        サムネを選択して下さい
+        %input.video_thumbnail__form--display{type: "file"}
     .video_title
+      .video_title__text
+        動画タイトル
+      %input.video_title__form{type: "text", placeholder: "動画タイトル"}
     .video_explain
+      .video_explain__text
+        動画説明文
+      %input.video_explain__form{type: "text", placeholder: "動画説明文を入力..."}
     .video_genre
+      .video_genre__text
+        ジャンルの設定
+      %input.video_genre__form{type: "text", placeholder: "ジャンルを選択"}
+      -# ここはセレクトボックス にするか？
     .video_tags
+      .video_tags__text
+        タグの設定
+      %input.video_tags__form{type: "text", placeholder: "タグを追加"}
+        -# ここもセレクトボックスなどにする
     .submit
+      %input{type: "submit", value: "投稿する"}
 

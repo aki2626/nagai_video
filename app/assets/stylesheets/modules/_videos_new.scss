@@ -16,4 +16,79 @@
 .video_form {
   width: $main_content_width;
   margin: auto;
+  padding-bottom: 50px;
+  .video_input {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+      padding: auto;
+      // ここでpadddingの大きさを調整する
+      background-color: white;
+      border: 1px solid gray;
+      &--display {
+        display: none;
+      }
+    }
+  }
+  .video_thumbnail {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+      padding: auto;
+      // ここでpadddingの大きさを調整する
+      background-color: white;
+      border: 1px solid gray;
+      &--display {
+        display: none;
+      }
+    }
+  }
+  .video_title {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .video_explain {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .video_genre {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .video_tags {
+    margin-bottom: 10px;
+    &__text {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
 }
