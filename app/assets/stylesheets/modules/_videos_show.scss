@@ -1,0 +1,218 @@
+.show_main{
+  width: $main_content_width;
+  margin: auto;
+  padding-top: 10px;
+  background-color: #f8f8f8f8;
+  .show_header {
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .search_area {
+      margin: auto 0 auto 10px;  
+      .form_area {
+        display: flex;
+        &__btn {
+          background-color: tan;
+          padding: 5px;
+          &--display {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .explain {
+    .text_turnback {
+      text-align: right;
+    }
+  }
+  .information_lists {
+    display: flex;
+    font-size: 14px;
+    .information_list {
+      border-right: 1px solid #a0a0a0;
+      padding: 10px;
+      &__title {
+        color:gray;
+      }
+      &__text {
+        font-weight: bold;;
+      }
+    }
+    .user_information {
+      display: flex;
+      &__name {
+        font-weight: bold;
+        line-height: auto;
+      }
+      &__image {
+        height: 40px;
+        width: 40px;
+        background-color: tomato;
+      }
+      &__follow {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        &--icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .tags_area {
+    display: flex;
+    font-size: 14px;
+    .tag_edit {
+      background-color: #d2d2d2;
+      border-radius: 30px;
+      padding: 0 8px;
+      color: white;
+      line-height: 20px;
+    }
+    .tags_lists {
+      display: flex;
+      flex-wrap: wrap;
+      &__tag {
+        text-decoration: none;
+        margin: 5px;
+        padding: 0 8px;
+        color:black;
+        background-color: white;
+        border-radius: 30px;
+        border: 1px solid #d2d2d2; 
+      }
+    }
+  }
+  .main_contents {
+    height: 440px;
+    width: 1024px;
+    display: flex;
+    border: 1px solid #dddddd;
+    .left_contents {
+      height: 100%;
+      width: 640px;
+      border-right: 1px solid gray;
+      .video_player {
+        background-color: $white_brawn;
+        height: 360px;
+      }
+      .video_control {
+        height: 36px;
+        background-color: $main_brawn_color;
+      }
+      .comment_create {
+        height: 40px;
+        display: flex;
+        &__form{
+          width: 540px;
+        }
+        &__btn{
+          background-color: blue;
+          color: white;
+          width: 100px;
+        }
+      }
+    }
+    .right_contents {
+      height: 100%;
+      width: 384px;
+      .register_area {
+        height: 44px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd;
+        .left_box {
+          display: flex;
+          &__icon {
+            text-decoration: none;
+            color:black;
+            line-height: 44px;
+            margin: 0 3px;
+            font-size: 28px;
+          }
+        }
+        .right_box {
+          display: flex;
+          &__icon {
+            text-decoration: none;
+            line-height: 44px;
+            margin: 0 3px;
+            font-size: 28px;
+            &--twitter {
+              color: aqua;
+            }
+            &--facebook {
+              color: #000099;
+            }
+            &--line {
+              color: #99FF66;
+            }
+            &--share {
+              color: gray;
+            }
+          }
+        }
+      }
+      .relation_movies {
+        height: calc(100% - 44px);
+        .movie_area {
+          display: flex;
+          width: 360px;
+          height: 74px;
+          margin: 2px;
+          .movie_thumbnail {
+            width: 130px;
+            height:74px;
+            background-color: blue;
+          }
+          .movie_information {
+            margin: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            &__created_at {
+              font-size: 12px;
+            }
+            &__name {
+            }
+            .detail_information {
+              display: flex;
+              font-size: 12px;
+              &__views_number {
+                margin-right:  4px;
+              }
+              &__comments {
+                margin-right: 4px;
+              }
+              &__mylists {
+                margin-right: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .comments_area {
+    width: 1024px;
+    margin: 20px 0px 0px 0px;
+    padding-bottom: 50px;
+    .comment {
+      margin-top: 10px;
+      display: flex;
+      .comment__user_icon {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+      }
+      .comment_right {
+        margin-left: 10px;
+      }
+    }
+  }
+}

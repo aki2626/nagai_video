@@ -80,31 +80,3 @@
     }
   }
 }
-.footer {
-  background-color: $main_brawn_color;
-  .footer_area {
-    height: 100px;
-    width: $main_content_width;
-    margin: auto;
-    color: white;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    &__logo {
-      font-size: $logo_small_size;
-      font-weight: bold;
-      margin: 10px 10px 0 0;
-    }
-    .footer_right {
-      display: flex;
-      flex-wrap: wrap;
-      margin: auto;
-      &__link {
-        padding: 7px;
-        font-size: 14px; 
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
-}
