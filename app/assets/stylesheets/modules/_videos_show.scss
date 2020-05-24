@@ -105,7 +105,7 @@
         background-color: $main_brawn_color;
       }
       .comment_create {
-        height: 32px;
+        height: 40px;
         display: flex;
         &__form{
           width: 540px;
@@ -195,6 +195,23 @@
             }
           }
         }
+      }
+    }
+  }
+  .comments_area {
+    width: 1024px;
+    margin: 20px 0px 0px 0px;
+    padding-bottom: 50px;
+    .comment {
+      margin-top: 10px;
+      display: flex;
+      .comment__user_icon {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+      }
+      .comment_right {
+        margin-left: 10px;
       }
     }
   }
