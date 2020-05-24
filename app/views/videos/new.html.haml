@@ -2,3 +2,19 @@
   .new_header__logo
     nagai_video
   .user_information
+    .user_information__name
+      ジャパニーズ
+    =icon('fas', 'user-circle', class: "user_information__icon")
+.video_form
+  %form
+    .video_input
+      .video_input__text
+        動画を選択してください
+      %input.video_input__form{type: "file"}
+    .video_thumbnail
+    .video_title
+    .video_explain
+    .video_genre
+    .video_tags
+    .submit
+
