@@ -1,0 +1,22 @@
+.search_area {
+  width: $main_content_width;
+  background-color: #dddddd;
+  height: 80px;
+  margin: 50px auto;
+  text-align: center;
+  border-radius: 10px;
+  .form_area {
+    line-height: 80px;
+    &__text {
+      width: 300px;
+      height: 40px;
+    }
+    &__btn {
+      background-color: #ffffff;
+        height: 40px;
+        width: 40px;
+      &--icon {
+      }
+    }
+  }
+}
