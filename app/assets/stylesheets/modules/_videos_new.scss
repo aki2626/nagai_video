@@ -1,0 +1,113 @@
+.new_header {
+  display: flex;
+  justify-content: space-between;
+  width: $main_content_width;
+  margin: 20px auto;
+  &__logo {
+    font-size: $logo_size;
+    font-weight: bold;
+  }
+  .user_information {
+    display: flex;
+  }
+}
+.video_form {
+  width: $main_content_width;
+  margin: auto;
+  padding-bottom: 50px;
+  .video_input {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+      padding: 10px 0;
+      // ここでpadddingの大きさを調整する
+      background-color: white;
+      border: 1px solid #cccccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: gray;
+      &--icon {
+        font-size: 40px;
+      }
+      &--display {
+        display: none;
+      }
+    }
+  }
+  .video_thumbnail {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+      padding: auto;
+      color: gray;
+      // ここでpadddingの大きさを調整する
+      background-color: white;
+      border: 1px solid #cccccc;
+      &--display {
+        display: none;
+      }
+    }
+  }
+  .video_title {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .video_explain {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+      height: 140px;
+      padding-top: 5px;
+    }
+  }
+  .video_genre {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .video_tags {
+    margin-bottom: 20px;
+    &__text {
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    &__form {
+      width: 680px;
+    }
+  }
+  .submit {
+    text-align: center;
+    width: 680px;
+    &__btn {
+      font-size: 20px;
+      background-color: $main_brawn_color;
+      color: white;
+      border-radius: 20px;
+      padding: 4px 20px;
+    }
+  }
+}

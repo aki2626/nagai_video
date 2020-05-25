@@ -1,0 +1,49 @@
+.new_header
+  .new_header__logo
+    nagai_video
+  .user_information
+    .user_information__name
+      ジャパニーズ
+    =icon('fas', 'user-circle', class: "user_information__icon")
+.video_form
+  %form
+    .video_input
+      .video_input__text
+        動画
+      %label
+        .video_input__form
+          =icon('fas', 'arrow-circle-up', class: "video_input__form--icon")
+          .video_input__form--text
+            動画ファイルを選択
+          .video_input__form--text
+            またはドラッグ&ドロップしてください
+        %input.video_input__form--display{type: "file"}
+    .video_thumbnail
+      .video_thumbnail__text
+        サムネイルを選択して下さい。
+      %label
+        .video_thumbnail__form
+          サムネを選択して下さい
+        %input.video_thumbnail__form--display{type: "file"}
+        -# サムネイルはこちらになります。という感じの方がいいかも。動画作成時にサムネイルが作成されそうなため。
+    .video_title
+      .video_title__text
+        動画タイトル
+      %input.video_title__form{type: "text", placeholder: "動画タイトル"}
+    .video_explain
+      .video_explain__text
+        動画説明文
+      %input.video_explain__form{type: "text", placeholder: "動画説明文を入力..."}
+    .video_genre
+      .video_genre__text
+        ジャンルの設定
+      %input.video_genre__form{type: "text", placeholder: "ジャンルを選択"}
+      -# ここはセレクトボックス にするか？
+    .video_tags
+      .video_tags__text
+        タグの設定
+      %input.video_tags__form{type: "text", placeholder: "タグを追加"}
+        -# ここもセレクトボックスなどにする
+    .submit
+      %input{type: "submit", value: "投稿する", class: "submit__btn"}
+
