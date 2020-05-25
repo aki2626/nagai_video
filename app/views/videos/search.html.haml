@@ -1,0 +1,11 @@
+.header
+  .header_top
+    .header_top__logo
+      nagai_video
+    .search_area
+      %form
+        .form_area
+          %input.form_area__text{type: "text", placeholder: "動画を検索"}
+          %label.form_area__btn
+            = icon('fas', 'search')
+            %input.form_area__btn--display{type: "submit", value: ""}
