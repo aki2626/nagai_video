@@ -12,13 +12,17 @@
         動画
       %label
         .video_input__form
-          動画を選択して下さい
+          =icon('fas', 'arrow-circle-up', class: "video_input__form--icon")
+          .video_input__form--text
+            動画ファイルを選択
+          .video_input__form--text
+            またはドラッグ&ドロップしてください
         %input.video_input__form--display{type: "file"}
     .video_thumbnail
       .video_thumbnail__text
         サムネイルを選択して下さい。
       %label
-        .video_input__form
+        .video_thumbnail__form
           サムネを選択して下さい
         %input.video_thumbnail__form--display{type: "file"}
     .video_title

@@ -21,14 +21,21 @@
     margin-bottom: 10px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin: 5px 0;
     }
     &__form {
       width: 680px;
-      padding: auto;
+      padding: 10px 0;
       // ここでpadddingの大きさを調整する
       background-color: white;
       border: 1px solid gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: gray;
+      &--icon {
+        font-size: 40px;
+      }
       &--display {
         display: none;
       }
