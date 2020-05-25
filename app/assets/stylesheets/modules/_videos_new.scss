@@ -9,8 +9,6 @@
   }
   .user_information {
     display: flex;
-    &__name {
-    }
   }
 }
 .video_form {
@@ -18,17 +16,17 @@
   margin: auto;
   padding-bottom: 50px;
   .video_input {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin: 5px 0;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
       padding: 10px 0;
       // ここでpadddingの大きさを調整する
       background-color: white;
-      border: 1px solid gray;
+      border: 1px solid #cccccc;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -42,60 +40,74 @@
     }
   }
   .video_thumbnail {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
       padding: auto;
+      color: gray;
       // ここでpadddingの大きさを調整する
       background-color: white;
-      border: 1px solid gray;
+      border: 1px solid #cccccc;
       &--display {
         display: none;
       }
     }
   }
   .video_title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
     }
   }
   .video_explain {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
+      height: 140px;
+      padding-top: 5px;
     }
   }
   .video_genre {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
     }
   }
   .video_tags {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     &__text {
       font-weight: bold;
-      margin-top: 5px;
+      margin-bottom: 16px;
     }
     &__form {
       width: 680px;
+    }
+  }
+  .submit {
+    text-align: center;
+    width: 680px;
+    &__btn {
+      font-size: 20px;
+      background-color: $main_brawn_color;
+      color: white;
+      border-radius: 20px;
+      padding: 4px 20px;
     }
   }
 }

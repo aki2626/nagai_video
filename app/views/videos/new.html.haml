@@ -25,6 +25,7 @@
         .video_thumbnail__form
           サムネを選択して下さい
         %input.video_thumbnail__form--display{type: "file"}
+        -# サムネイルはこちらになります。という感じの方がいいかも。動画作成時にサムネイルが作成されそうなため。
     .video_title
       .video_title__text
         動画タイトル
@@ -44,5 +45,5 @@
       %input.video_tags__form{type: "text", placeholder: "タグを追加"}
         -# ここもセレクトボックスなどにする
     .submit
-      %input{type: "submit", value: "投稿する"}
+      %input{type: "submit", value: "投稿する", class: "submit__btn"}
 
