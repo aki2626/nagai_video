@@ -61,7 +61,8 @@
         そうはならんやろ
   .main_contents
     .left_contents
-      =video_tag("/videos/sample2.mp4", autoplay: true, class: "video_player")
+      =video_tag(@video.movie_url, autoplay: true, class: "video_player")
+      -# =image_tag(@video.movie_url(:screenshot), class: "video_player")
       .video_control
         ここにいろんなアイコンを入れます。
       %form
