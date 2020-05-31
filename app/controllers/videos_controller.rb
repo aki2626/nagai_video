@@ -8,8 +8,11 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    @video.save!
-    redirect_to root_path
+    if @video.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
