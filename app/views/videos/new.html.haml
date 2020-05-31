@@ -6,7 +6,7 @@
       ジャパニーズ
     =icon('fas', 'user-circle', class: "user_information__icon")
 .video_form
-  %form
+  =form_for [@video] do |f|
     .video_input
       .video_input__text
         動画
@@ -17,33 +17,39 @@
             動画ファイルを選択
           .video_input__form--text
             またはドラッグ&ドロップしてください
-        %input.video_input__form--display{type: "file"}
+        -# %input.video_input__form--display{type: "file"}
+        = f.file_field :movie, class: "video_input__form--display"
     .video_thumbnail
       .video_thumbnail__text
         サムネイルを選択して下さい。
       %label
         .video_thumbnail__form
           サムネを選択して下さい
-        %input.video_thumbnail__form--display{type: "file"}
+        -# %input.video_thumbnail__form--display{type: "file"}
         -# サムネイルはこちらになります。という感じの方がいいかも。動画作成時にサムネイルが作成されそうなため。
     .video_title
       .video_title__text
         動画タイトル
-      %input.video_title__form{type: "text", placeholder: "動画タイトル"}
+      = f.text_field :title, class: "video_title__form", placeholder: "動画タイトル"
+      -# %input.video_title__form{type: "text", placeholder: "動画タイトル"}
     .video_explain
       .video_explain__text
         動画説明文
-      %input.video_explain__form{type: "text", placeholder: "動画説明文を入力..."}
+      -# %input.video_explain__form{type: "text", placeholder: "動画説明文を入力..."}
+      = f.text_area :explain, class: "video_explain__form", placeholder: "動画説明文を入力..."
     .video_genre
       .video_genre__text
         ジャンルの設定
-      %input.video_genre__form{type: "text", placeholder: "ジャンルを選択"}
+      -# %input.video_genre__form{type: "text", placeholder: "ジャンルを選択"}
+      =f.select :genre, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "ジャンルを選択"}, class: "video_genre__form"
       -# ここはセレクトボックス にするか？
     .video_tags
       .video_tags__text
         タグの設定
-      %input.video_tags__form{type: "text", placeholder: "タグを追加"}
+      =f.select :tag, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "タグを追加"}, class: "video_tags__form"
+      -# %input.video_tags__form{type: "text", placeholder: "タグを追加"}
+      -# =f.select :tag, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "タグを追加"}, class: "video_tags__form"
         -# ここもセレクトボックスなどにする
     .submit
-      %input{type: "submit", value: "投稿する", class: "submit__btn"}
-
+      = f.submit '投稿する', class: "submit__btn"
+      -# %input{type: "submit", value: "投稿する", class: "submit__btn"}
