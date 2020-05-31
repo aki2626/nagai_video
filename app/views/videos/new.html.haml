@@ -40,16 +40,14 @@
     .video_genre
       .video_genre__text
         ジャンルの設定
-      -# %input.video_genre__form{type: "text", placeholder: "ジャンルを選択"}
-      =f.select :genre, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "ジャンルを選択"}, class: "video_genre__form"
+      = f.fields_for :genre do |d|
+        = f.collection_select :genre_id, Genre.all, :id, :name, {prompt: "ジャンルを選択"}, class: "video_genre__form"
       -# ここはセレクトボックス にするか？
     .video_tags
       .video_tags__text
         タグの設定
-      =f.select :tag, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "タグを追加"}, class: "video_tags__form"
-      -# %input.video_tags__form{type: "text", placeholder: "タグを追加"}
-      -# =f.select :tag, [['アニメ','アニメ'], ['テレビ','テレビ']], {prompt: "タグを追加"}, class: "video_tags__form"
-        -# ここもセレクトボックスなどにする
+      = f.fields_for :tag do |d|
+        = f.collection_select :tag_id, Tag.all, :id, :name, {prompt: "タグを追加"}, class: "video_tags__form"
     .submit
       = f.submit '投稿する', class: "submit__btn"
       -# %input{type: "submit", value: "投稿する", class: "submit__btn"}

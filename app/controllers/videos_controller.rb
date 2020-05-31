@@ -22,7 +22,7 @@ class VideosController < ApplicationController
     params.require(:video).permit(:explain,
                                   :movie,
                                   :title,
-                                  :genre,
-                                  :tag)
+                                  :genre_id,
+                                  :tag_id)
   end
 end
