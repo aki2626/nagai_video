@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_05_19_085329) do
     t.string "movie"
     t.string "title"
     t.string "explain"
-    t.string "genre"
-    t.string "tag"
+    t.integer "genre_id"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

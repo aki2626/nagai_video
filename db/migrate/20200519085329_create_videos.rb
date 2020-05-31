@@ -4,8 +4,8 @@ class CreateVideos < ActiveRecord::Migration[5.2]
       t.string  :movie
       t.string  :title
       t.string  :explain
-      t.string  :genre
-      t.string  :tag
+      t.integer  :genre_id
+      t.integer  :tag_id
       t.timestamps
     end
   end
