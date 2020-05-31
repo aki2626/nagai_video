@@ -1,6 +1,5 @@
 class Tag < ActiveHash::Base
   self.data = [
-      {id: 1, name: '北海道'}, {id: 2, name: '青森県'}, {id: 3, name: '岩手県'},
-
+      {id: 1, name: 'ひろしのテーマ'}, {id: 2, name: 'アニメOP'}, {id: 3, name: 'test'},
   ]
 end
