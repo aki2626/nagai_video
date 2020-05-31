@@ -1,9 +1,11 @@
 class CreateVideos < ActiveRecord::Migration[5.2]
   def change
     create_table :videos do |t|
-      t.string  :video
+      t.string  :movie
+      t.string  :title
       t.string  :explain
-      #  仮です。
+      t.integer  :genre_id
+      t.integer  :tag_id
       t.timestamps
     end
   end
