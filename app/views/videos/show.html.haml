@@ -2,7 +2,7 @@
   .show_header
     .show_header__title
       = @video.title
-    .search_area
+    .mini_search_area
       %form
         .form_area
           %input.form_area__text{type: "text", placeholder: "動画を検索"}
@@ -46,13 +46,13 @@
       .information_list__title
         ジャンル
       .information_list__text
-        ゲーム
+        = @video.genre.name
   .tags_area
     .tag_edit
       タグ編集
     .tags_lists
       = link_to "#", class:"tags_lists__tag" do
-        実況プレイ動画
+        = @video.tag.name
       = link_to "#", class:"tags_lists__tag" do
         バーガーバーガー
       = link_to "#", class:"tags_lists__tag" do
