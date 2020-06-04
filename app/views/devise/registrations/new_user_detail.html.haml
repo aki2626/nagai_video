@@ -8,9 +8,10 @@
     -# %label
     -#   = f.radio_button :gender, "1",class: "" 
   .field
-    = f.label :prefecture_id
+    = f.label :"所在地"
     %br/
-    = f.text_field :prefecture_id
+    = f.fields_for :prefecture do |d|
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: ""}
   .field
     = f.label :"誕生日"
     %br/
