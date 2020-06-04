@@ -1,8 +1,8 @@
 .show_main
   .show_header
     .show_header__title
-      鷲崎健 演出「神戸に帰った男」
-    .search_area
+      = @video.title
+    .mini_search_area
       %form
         .form_area
           %input.form_area__text{type: "text", placeholder: "動画を検索"}
@@ -10,9 +10,7 @@
             = icon('fas', 'search')
             %input.form_area__btn--display{type: "submit", value: ""}
   .explain
-    2h-2013/12/27
-    試しうP
-    「I Love You」のある世界
+    = @video.explain
     .text_turnback
       動画説明文を閉じる
   .information_lists
@@ -28,7 +26,7 @@
       .information_list__title
         投稿日時
       .information_list__text
-        2019/01/09 19:36
+        = @video.created_at
     .information_list
       .information_list__title
         再生数
@@ -48,20 +46,20 @@
       .information_list__title
         ジャンル
       .information_list__text
-        ゲーム
+        = @video.genre.name
   .tags_area
     .tag_edit
       タグ編集
     .tags_lists
       = link_to "#", class:"tags_lists__tag" do
-        実況プレイ動画
+        = @video.tag.name
       = link_to "#", class:"tags_lists__tag" do
         バーガーバーガー
       = link_to "#", class:"tags_lists__tag" do
         そうはならんやろ
   .main_contents
     .left_contents
-      =video_tag(@video.movie_url, autoplay: true, class: "video_player")
+      =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player")
       -# =image_tag(@video.movie_url(:screenshot), class: "video_player")
       .video_control
         ここにいろんなアイコンを入れます。
