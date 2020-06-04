@@ -2,9 +2,11 @@
 = form_for(@user_detail) do |f|
   = render "devise/shared/error_messages", resource: @user_detail
   .field
-    = f.label :gender
+    = f.label :"性別"
     %br/
-    = f.text_field :gender
+    = f.select :gender, [["男性",0], ["女性",1]],prompt: "選択してください", class: "" 
+    -# %label
+    -#   = f.radio_button :gender, "1",class: "" 
   .field
     = f.label :prefecture_id
     %br/
