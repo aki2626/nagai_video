@@ -1,4 +1,5 @@
 @import "reset";
+@import "config/colors";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/variable";
@@ -9,3 +10,5 @@
 @import "modules/videos_show";
 @import "modules/videos_new";
 @import "modules/videos_search";
+@import "modules/users_create";
+@import "modules/flash";
