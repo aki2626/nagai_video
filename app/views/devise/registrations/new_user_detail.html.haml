@@ -1,0 +1,18 @@
+%h2 詳細情報の入力
+= form_for(@user_detail) do |f|
+  = render "devise/shared/error_messages", resource: @user_detail
+  .field
+    = f.label :gender
+    %br/
+    = f.text_field :gender
+  .field
+    = f.label :prefecture_id
+    %br/
+    = f.text_field :prefecture_id
+  .field
+    = f.label :"誕生日"
+    %br/
+    = f.date_select :birth_date, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
+  .actions
+    = f.submit "sign up"
+= render "devise/shared/links"
