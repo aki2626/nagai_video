@@ -7,6 +7,9 @@ class Video < ApplicationRecord
   validates :tag_id,            presence: true
   
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :tag
+  # belongs_to_active_hash :tag
   belongs_to_active_hash :genre
+
+  has_many  :video_tags
+  has_many  :tags, through: :video_tags
 end
