@@ -78,7 +78,7 @@ Things you may want to cover:
  ## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
  - has_many :videos_tags
