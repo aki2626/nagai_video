@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_06_07_030609) do
     t.string "title"
     t.string "explain"
     t.integer "genre_id"
-    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
