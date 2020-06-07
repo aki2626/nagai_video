@@ -46,8 +46,9 @@
     .video_tags
       .video_tags__text
         タグの設定
-      = f.fields_for :tag do |d|
-        = f.collection_select :tag_id, Tag.all, :id, :name, {prompt: "タグを追加"}, class: "video_tags__form"
+      = f.text_field :tag_list, value: @video.tag_list.join(","), class: "video_tags__form", placeholder: "タグを追加"
+      -# = f.fields_for :tag do |d|
+      -#   = f.collection_select :tag_id, Tag.all, :id, :name, {prompt: "タグを追加"}, class: "video_tags__form"
     .submit
       = f.submit '投稿する', class: "submit__btn"
       -# %input{type: "submit", value: "投稿する", class: "submit__btn"}
