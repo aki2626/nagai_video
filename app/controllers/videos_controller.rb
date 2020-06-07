@@ -26,6 +26,6 @@ class VideosController < ApplicationController
                                   :movie,
                                   :title,
                                   :genre_id,
-                                  :tag_id)
+                                  :tag_list)
   end
 end
