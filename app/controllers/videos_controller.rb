@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  impressionist :actions=>[:show]
+  
   def index
     # @videos = Video.includes(:tags)
     # if @params[:tag_name]

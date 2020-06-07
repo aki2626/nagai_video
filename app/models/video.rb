@@ -10,4 +10,5 @@ class Video < ApplicationRecord
   belongs_to_active_hash :genre
 
   acts_as_taggable_on :tags  
+  is_impressionable
 end
