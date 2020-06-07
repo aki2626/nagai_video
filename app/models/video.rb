@@ -9,4 +9,6 @@ class Video < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :tag
   belongs_to_active_hash :genre
+
+  acts_as_taggable  
 end
