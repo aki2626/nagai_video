@@ -1,0 +1,2 @@
+class VideoMylist < ApplicationRecord
+end
