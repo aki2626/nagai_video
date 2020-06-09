@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
-  has_one :user_detail
+  has_one   :user_detail
+  has_many  :videos
+  has_many  :mylists
 end

@@ -1,10 +1,13 @@
 class Video < ApplicationRecord
   mount_uploader :movie, MovieUploader
+
+  has_many  :video_mylists
+  has_many  :mylists, through: :video_mylists
+  belongs_to  :user
   validates :movie,             presence: true
   validates :title,             presence: true
   validates :explain,           presence: true
   validates :genre_id,          presence: true
-  # validates :tag_list,           presence: true
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
