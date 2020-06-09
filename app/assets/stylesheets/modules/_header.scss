@@ -34,7 +34,7 @@
       .header_menu {
         position: relative;
         .menu {
-          background-color: red;
+          background-color: $main_brawn_color;
           position: absolute;
           right: 0px;
           top: 28px;
@@ -46,6 +46,12 @@
               color: white;
             }   
           }
+        }
+        .display_none {
+          display: none;
+        }
+        .display_show{
+          display: block;
         }
       }
     }
