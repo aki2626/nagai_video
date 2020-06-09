@@ -54,10 +54,6 @@
       - @video.tag_list.each do |tag|
         = link_to "#", class:"tags_lists__tag" do
           = tag
-        -# = link_to "#", class:"tags_lists__tag" do
-        -#   バーガーバーガー
-        -# = link_to "#", class:"tags_lists__tag" do
-        -#   そうはならんやろ
   .main_contents
     .left_contents
       =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player")
@@ -72,8 +68,6 @@
       .register_area
         .left_box
           = link_to "#", class: "left_box__icon" do
-            = icon('fas','folder')
-          = link_to "#", class: "left_box__icon" do
             = icon('fas','folder-plus')
         .right_box
           = link_to "#", class: "right_box__icon" do
@@ -84,41 +78,52 @@
             = icon('fab','line', class: "right_box__icon--line")
           = link_to "#", class: "right_box__icon" do
             = icon('fas','share-alt-square', class: "right_box__icon--share")
-      .relation_movies
-        .movie_area
-          =link_to "#", class:"movie_thumbnail" do
-            サムネイル
-          .movie_information
-            .movie_information__created_at
-              2015/5/17 6:00 投稿
-            .movie_information__name
-              MHD モンハンどうでしょうR
-            .detail_information
-              .detail_information__views_number
-                ▶︎ 3.5万
-              .detail_information__comments
-                =icon('fas', 'comment-alt')
-                583
-              .detail_information__mylists
-                =icon('fas', 'folder')
-                82
-        .movie_area
-          =link_to "#", class:"movie_thumbnail" do
-            サムネイル
-          .movie_information
-            .movie_information__created_at
-              2015/5/17 6:00 投稿
-            .movie_information__name
-              MHD モンハンどうでしょうR
-            .detail_information
-              .detail_information__views_number
-                ▶︎ 3.5万
-              .detail_information__comments
-                =icon('fas', 'comment-alt')
-                583
-              .detail_information__mylists
-                =icon('fas', 'folder')
-                82
+      .right_main_contents
+        .relation_movies.display_none
+          .movie_area
+            =link_to "#", class:"movie_thumbnail" do
+              サムネイル
+            .movie_information
+              .movie_information__created_at
+                2015/5/17 6:00 投稿
+              .movie_information__name
+                MHD モンハンどうでしょうR
+              .detail_information
+                .detail_information__views_number
+                  ▶︎ 3.5万
+                .detail_information__comments
+                  =icon('fas', 'comment-alt')
+                  583
+                .detail_information__mylists
+                  =icon('fas', 'folder')
+                  82
+          .movie_area
+            =link_to "#", class:"movie_thumbnail" do
+              サムネイル
+            .movie_information
+              .movie_information__created_at
+                2015/5/17 6:00 投稿
+              .movie_information__name
+                MHD モンハンどうでしょうR
+              .detail_information
+                .detail_information__views_number
+                  ▶︎ 3.5万
+                .detail_information__comments
+                  =icon('fas', 'comment-alt')
+                  583
+                .detail_information__mylists
+                  =icon('fas', 'folder')
+                  82
+        .mylists_add
+          .mylists_add__title 
+            マイリストに登録
+          %ul.user_mylists
+            %li.user_mylists__mylist
+              オアシス
+            %li.user_mylists__mylist
+              SHIROBAKO                    
+          =link_to "#", class: "new_mylist" do
+            ＋新規登録して作成
   .comments_area
     コメント一覧
     .comment
