@@ -13,7 +13,7 @@ class MylistsController < ApplicationController
 
   private
   def mylist_params
-    params.require(:mylist).permit(video_ids: [])
+    params.require(:mylist).permit(video_ids: []).merge(user_id: current_user.id)
   end
 
 end

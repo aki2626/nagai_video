@@ -12,5 +12,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :mylists, only: [:new,:create]
+  resources :users, only:  [:show] do
+    resources :mylists, only: [:new,:create, :edit]
+  end
 end
