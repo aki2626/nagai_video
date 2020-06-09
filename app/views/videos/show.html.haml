@@ -79,7 +79,7 @@
           = link_to "#", class: "right_box__icon" do
             = icon('fas','share-alt-square', class: "right_box__icon--share")
       .right_main_contents
-        .relation_movies.display_none
+        .relation_movies
           .movie_area
             =link_to "#", class:"movie_thumbnail" do
               サムネイル
@@ -114,7 +114,7 @@
                 .detail_information__mylists
                   =icon('fas', 'folder')
                   82
-        .mylists_add
+        .mylists_add.display_none
           .mylists_add__title 
             マイリストに登録
           %ul.user_mylists
