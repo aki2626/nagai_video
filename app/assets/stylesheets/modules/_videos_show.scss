@@ -211,12 +211,40 @@
             padding: 10px;
             &__mylist {
               padding-top: 5px;
+              &--new_mylist {
+                text-decoration: none;
+                color: black;
+              }
             }
           }
-          .new_mylist {
+          .create_mylist{
             padding: 10px;
-            text-decoration: none;
-            color: black;
+            .new_title {
+              padding: 10px 0;
+              &__form {
+                padding-bottom: 10px;
+                width: 300px;
+              }
+            }  
+            .new_explain {
+              padding: 10px 0;
+              &__form {
+                padding-bottom: 10px;
+                width: 300px;
+              }
+            }
+            .mylist_btn {
+              display: flex;
+              justify-content: center;
+              padding-top: 10px;
+              &__cancel {
+                margin-right: 10px;
+                text-decoration: none;
+              }
+              &__submit {
+                margin-left: 10px;
+              }
+            }
           }
         }
         .display_none {

@@ -122,8 +122,21 @@
               オアシス
             %li.user_mylists__mylist
               SHIROBAKO                    
-          =link_to "#", class: "new_mylist" do
-            ＋新規登録して作成
+            %li.user_mylists__mylist
+              =link_to "#", class: "user_mylists__mylist--new_mylist" do
+                ＋新規登録して作成
+          .create_mylist
+            %form
+              .new_title
+                マイリスト
+              %input{type: "text", placeholder:"マイリスト名を入力してください", class: "new_title__form"}
+              .new_explain
+                マイリストコメント
+              %input{type: "text", placeholder: "省略可", class: "new_explain__form"}
+              .mylist_btn
+                =link_to "#", class: "mylist_btn__cancel" do
+                  キャンセル
+                %input{type: "submit", value: "登録する", class: "mylist_btn__submit"}
   .comments_area
     コメント一覧
     .comment
