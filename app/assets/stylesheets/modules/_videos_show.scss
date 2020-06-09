@@ -199,12 +199,18 @@
         }
         .mylists_add {
           overflow: scroll;
-          &__title {
+          &__header {
             background-color: #d2d2d2;
             color: white;
             font-size: 20px;
             text-align: center;
-            padding: 3px 0;
+            padding: 3px 10px;
+            display: flex;
+            justify-content: space-between;
+            &--cancel {
+              text-decoration: none;
+              color: white;
+            }
           }
           .user_mylists {
             list-style: none;

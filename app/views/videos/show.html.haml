@@ -115,8 +115,11 @@
                   =icon('fas', 'folder')
                   82
         .mylists_add.display_none
-          .mylists_add__title 
-            マイリストに登録
+          .mylists_add__header 
+            .mylists_add__header--title
+              マイリストに登録
+            =link_to "#", class: "mylists_add__header--cancel" do
+              ✖︎
           %ul.user_mylists
             %li.user_mylists__mylist
               オアシス
@@ -125,7 +128,7 @@
             %li.user_mylists__mylist
               =link_to "#", class: "user_mylists__mylist--new_mylist" do
                 ＋新規登録して作成
-          .create_mylist
+          .create_mylist.display_none
             %form
               .new_title
                 マイリスト
