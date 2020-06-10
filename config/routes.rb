@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only:  [:show] do
-    resources :mylists, only: [:new,:create, :edit]
+    resources :mylists, only: [:create, :edit]
   end
 end

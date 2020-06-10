@@ -129,17 +129,20 @@
               =link_to "#", class: "user_mylists__mylist--new_mylist" do
                 ＋新規登録して作成
           .create_mylist.display_none
-            %form
+            = form_for [@video, @mylist], url: user_mylists_path(user_path) do |f|
               .new_title
                 マイリスト
-              %input{type: "text", placeholder:"マイリスト名を入力してください", class: "new_title__form"}
+              -# %input{type: "text", placeholder:"マイリスト名を入力してください", class: "new_title__form"}
+              = f.text_field :name, class: "new_title__form", placeholder:"マイリスト名を入力してください"
               .new_explain
                 マイリストコメント
-              %input{type: "text", placeholder: "省略可", class: "new_explain__form"}
+              -# %input{type: "text", placeholder: "省略可", class: "new_explain__form"}
+              = f.text_field :explain, class: "new_explain__form", placeholder: "省略化"
               .mylist_btn
                 =link_to "#", class: "mylist_btn__cancel" do
                   キャンセル
-                %input{type: "submit", value: "登録する", class: "mylist_btn__submit"}
+                = f.submit '登録する', class: "mylist_btn__submit"
+                -# %input{type: "submit", value: "登録する", class: "mylist_btn__submit"}
   .comments_area
     コメント一覧
     .comment
