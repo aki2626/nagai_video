@@ -80,23 +80,9 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル    
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
+      - @videos_latest.each do |video| 
+        =link_to video_path(video), class:"movie" do
+          .movie__thumbnail
+            = image_tag(video.movie_url(:screenshot), class: "movie__thumbnail")
+          .movie__title
+            = video.title 

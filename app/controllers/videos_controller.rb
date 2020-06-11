@@ -7,7 +7,7 @@ class VideosController < ApplicationController
     #   @videos = Video..tagged_with("#{params[:tag_name]}")
     # end
     # if内の内容はtag_withメソッドを使用して受け取った:tag_nameを持つvideoを返すアクションになっています。
-    @videos_new = Video.includes(:mylists).limit(5).order('created_at DESC')
+    @videos_latest = Video.includes(:mylists).limit(5).order('created_at DESC')
   end
 
   def new
