@@ -7,7 +7,7 @@ class VideosController < ApplicationController
     #   @videos = Video..tagged_with("#{params[:tag_name]}")
     # end
     # if内の内容はtag_withメソッドを使用して受け取った:tag_nameを持つvideoを返すアクションになっています。
-    @videos_ranking = Video.limit(5).order('count(impressionist_count) DESC')
+    @videos_ranking = Video.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))
     @videos_latest = Video.includes(:mylists).limit(5).order('created_at DESC')
   end
 
