@@ -16,5 +16,5 @@ class Video < ApplicationRecord
   is_impressionable
 
   # 動画検索機能の定義
-  scope :search, -> (search){ where('name LIKE ?', "%#{search}%" )}
+  scope :search, -> (search){ where('title LIKE ?', "%#{search}%" )}
 end

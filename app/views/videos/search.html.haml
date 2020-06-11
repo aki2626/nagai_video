@@ -1,79 +1,35 @@
 .search_area
-  %form
+  = form_with(url: search_videos_path, local: true, method: :get) do |f|
     .form_area
-      %input.form_area__text{type: "text", placeholder: "動画を検索"}
+      = f.text_field :keyword, class: "form_area__text", placeholder: "動画を検索"
       .form_area__btn
         %label
           = icon('fas', 'search', class: "form_area__btn--icon")
-          %input.form_area__btn--display{type: "submit", value: ""}
+          = f.submit "", class: "form_area__btn--display"
 .search_result
   .movies
-    .movie
-      .left_content
-        .left_content__created_at
-          2014/12/12 05:21
-        .left_content__thumbnail
-      .right_content
-        =link_to "#", class: "right_content__title" do
-          Minecraftの主役は我々だ！part1
-        .right_content__explain
-          要約：二つのチームに分かれて戦争します。前回の指摘から人物紹介を重視。マイクラ要素が希釈したかな？我々チャンネル → ch.nicovideo.jp/warewareda我々だコミュ→co2...
-        %ul.detail_information
-          %li.detail_information__title
-            再生
-          %li.detail_information__date
-            2,515,069
-          %li.detail_information__title
-            コメ
-          %li.detail_information__date
-            23,406
-          %li.detail_information__title
-            マイ
-          %li.detail_information__date
-            15,219
-    .movie
-      .left_content
-        .left_content__created_at
-          2014/12/12 05:21
-        .left_content__thumbnail
-      .right_content
-        =link_to "#", class: "right_content__title" do
-          Minecraftの主役は我々だ！part1
-        .right_content__explain
-          要約：二つのチームに分かれて戦争します。前回の指摘から人物紹介を重視。マイクラ要素が希釈したかな？我々チャンネル → ch.nicovideo.jp/warewareda我々だコミュ→co2...
-        %ul.detail_information
-          %li.detail_information__title
-            再生
-          %li.detail_information__date
-            2,515,069
-          %li.detail_information__title
-            コメ
-          %li.detail_information__date
-            23,406
-          %li.detail_information__title
-            マイ
-          %li.detail_information__date
-            15,219
-    .movie
-      .left_content
-        .left_content__created_at
-          2014/12/12 05:21
-        .left_content__thumbnail
-      .right_content
-        =link_to "#", class: "right_content__title" do
-          Minecraftの主役は我々だ！part1
-        .right_content__explain
-          要約：二つのチームに分かれて戦争します。前回の指摘から人物紹介を重視。マイクラ要素が希釈したかな？我々チャンネル → ch.nicovideo.jp/warewareda我々だコミュ→co2...
-        %ul.detail_information
-          %li.detail_information__title
-            再生
-          %li.detail_information__date
-            2,515,069
-          %li.detail_information__title
-            コメ
-          %li.detail_information__date
-            23,406
-          %li.detail_information__title
-            マイ
-          %li.detail_information__date
-            15,219
+    - @videos.each do |video|
+      .movie
+        .left_content
+          .left_content__created_at
+            = video.created_at
+          .left_content__thumbnail
+            = image_tag(video.movie_url(:screenshot), class: "left_content__thumbnail")
+        .right_content
+          =link_to "#", class: "right_content__title" do
+            = video.title
+          .right_content__explain
+            = video.explain
+          %ul.detail_information
+            %li.detail_information__title
+              再生
+            %li.detail_information__date
+              = video.impressionist_count
+            %li.detail_information__title
+              コメ
+            %li.detail_information__date
+              23,406
+            %li.detail_information__title
+              マイ
+            %li.detail_information__date
+              = video.mylists.length
