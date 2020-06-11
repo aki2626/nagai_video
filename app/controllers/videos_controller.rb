@@ -30,7 +30,7 @@ class VideosController < ApplicationController
   end
 
   def search
-    @videos = Video.search(params[:keyword])
+    @videos = Video.search(params[:keyword]).page(params[:page]).per(9)
   end
 
   private
