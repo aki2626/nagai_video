@@ -14,9 +14,10 @@
           .left_content__created_at
             = video.created_at
           .left_content__thumbnail
-            = image_tag(video.movie_url(:screenshot), class: "left_content__thumbnail")
+            = link_to video_path(video) do
+              = image_tag(video.movie_url(:screenshot), class: "left_content__thumbnail")
         .right_content
-          =link_to "#", class: "right_content__title" do
+          = link_to video_path(video) ,class: "right_content__title"do
             = video.title
           .right_content__explain
             = video.explain
