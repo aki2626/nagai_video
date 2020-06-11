@@ -25,7 +25,8 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @mylist = Mylist.new
-    @mylist.videos << @video
+    @user = current_user
+    @mylists = @user.mylists
   end
 
   private

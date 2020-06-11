@@ -4,7 +4,8 @@ class MylistsController < ApplicationController
   def create
     @mylist = Mylist.new(mylist_params)
     @mylist.videos << @video
-    if @mylist.save
+    binding.pry
+    if @mylist.save!
       redirect_to root_path, notice: 'マイリストに追加しました'
     else
       redirect_to  root_path
@@ -13,7 +14,6 @@ class MylistsController < ApplicationController
 
   private
   def set_video
-    binding.pry
     @video = Video.find(params[:video_id])
   end
   def mylist_params

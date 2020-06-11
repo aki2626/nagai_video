@@ -57,7 +57,6 @@
   .main_contents
     .left_contents
       =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player")
-      -# =image_tag(@video.movie_url(:screenshot), class: "video_player")
       .video_control
         ここにいろんなアイコンを入れます。
       %form
@@ -121,15 +120,13 @@
             =link_to "#", class: "mylists_add__header--cancel" do
               ✖︎
           %ul.user_mylists
-            %li.user_mylists__mylist
-              オアシス
-            %li.user_mylists__mylist
-              SHIROBAKO                    
-            %li.user_mylists__mylist
-              =link_to "#", class: "user_mylists__mylist--new_mylist" do
-                ＋新規登録して作成
+            - @mylists.each do |mylist|
+              %li.user_mylists__mylist
+                = mylist.name
+            =link_to "#", class: "user_mylists__mylist--new_mylist" do
+              ＋新規登録して作成
           .create_mylist.display_none
-            = form_for [@video, @mylist], url: user_mylists_path(user_path) do |f|
+            = form_for [@video, @mylist]  do |f|
               .new_title
                 マイリスト
               -# %input{type: "text", placeholder:"マイリスト名を入力してください", class: "new_title__form"}
