@@ -56,9 +56,10 @@
           = tag
   .main_contents
     .left_contents
-      =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player")
-      .video_control
-        ここにいろんなアイコンを入れます。
+      .video_player
+        =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player__contents")
+      -# .video_control
+      -#   ここにいろんなアイコンを入れます。
       %form
         .comment_create
           %input.comment_create__form{type: "text", placeholder: "コメント"}
