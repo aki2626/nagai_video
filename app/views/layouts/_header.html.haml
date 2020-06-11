@@ -14,15 +14,16 @@
       %li.right_box__list
         =link_to "#" , class: "right_box__list--link" do
           ジャパニーズさん
-      %li.right_box__list
-        =link_to new_video_path, class: "right_box__list--link" do
-          動画投稿
+      - if current_user
+        %li.right_box__list
+          =link_to new_video_path, class: "right_box__list--link" do
+            動画投稿
       %li.right_box__list
         =link_to "#" , class: "right_box__list--link" do
           ランキング
-      %li.header_menu
+      %li.header_menu#hover_menu
         メニュー▼
-        %ul.menu
+        %ul.menu.display_none#js_menu
           %li.menu__list
             =link_to "#" , class: "menu__list--link" do
               マイリスト

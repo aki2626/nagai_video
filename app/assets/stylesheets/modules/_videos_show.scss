@@ -158,42 +158,106 @@
           }
         }
       }
-      .relation_movies {
+      .right_main_contents{
         height: calc(100% - 44px);
-        .movie_area {
-          display: flex;
-          width: 360px;
-          height: 74px;
-          margin: 2px;
-          .movie_thumbnail {
-            width: 130px;
-            height:74px;
-            background-color: blue;
-          }
-          .movie_information {
-            margin: 2px;
+        .relation_movies {
+          .movie_area {
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            &__created_at {
-              font-size: 12px;
+            width: 360px;
+            height: 74px;
+            margin: 2px;
+            .movie_thumbnail {
+              width: 130px;
+              height:74px;
+              background-color: blue;
             }
-            &__name {
-            }
-            .detail_information {
+            .movie_information {
+              margin: 2px;
               display: flex;
-              font-size: 12px;
-              &__views_number {
-                margin-right:  4px;
+              flex-direction: column;
+              justify-content: space-around;
+              &__created_at {
+                font-size: 12px;
               }
-              &__comments {
-                margin-right: 4px;
+              &__name {
               }
-              &__mylists {
-                margin-right: 4px;
+              .detail_information {
+                display: flex;
+                font-size: 12px;
+                &__views_number {
+                  margin-right:  4px;
+                }
+                &__comments {
+                  margin-right: 4px;
+                }
+                &__mylists {
+                  margin-right: 4px;
+                }
               }
             }
           }
+        }
+        .mylists_add {
+          overflow: scroll;
+          &__header {
+            background-color: #d2d2d2;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 3px 10px;
+            display: flex;
+            justify-content: space-between;
+            &--cancel {
+              text-decoration: none;
+              color: white;
+            }
+          }
+          .user_mylists {
+            list-style: none;
+            padding: 10px;
+            &__mylist {
+              padding-top: 5px;
+              &--new_mylist {
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+          .create_mylist{
+            padding: 10px;
+            .new_title {
+              padding: 10px 0;
+              &__form {
+                padding-bottom: 10px;
+                width: 300px;
+              }
+            }  
+            .new_explain {
+              padding: 10px 0;
+              &__form {
+                padding-bottom: 10px;
+                width: 300px;
+              }
+            }
+            .mylist_btn {
+              display: flex;
+              justify-content: center;
+              padding-top: 10px;
+              &__cancel {
+                margin-right: 10px;
+                text-decoration: none;
+              }
+              &__submit {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+        .display_none {
+          display: none;
+        }
+        .display_show{
+          display: block;
         }
       }
     }

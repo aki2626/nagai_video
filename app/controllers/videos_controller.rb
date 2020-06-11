@@ -15,7 +15,6 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    binding.pry
     if @video.save
       redirect_to root_path
     else
@@ -25,6 +24,9 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @mylist = Mylist.new
+    @user = current_user
+    @mylists = @user.mylists
   end
 
   private
@@ -34,6 +36,6 @@ class VideosController < ApplicationController
                                   :movie,
                                   :title,
                                   :genre_id,
-                                  :tag_list)
+                                  :tag_list).merge(user_id: current_user.id)
   end
 end
