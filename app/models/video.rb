@@ -14,4 +14,7 @@ class Video < ApplicationRecord
 
   acts_as_taggable_on :tags  
   is_impressionable
+
+  # 動画検索機能の定義
+  scope :search, -> (search){ where('name LIKE ?', "%#{search}%" )}
 end
