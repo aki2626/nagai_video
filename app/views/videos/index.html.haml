@@ -3,12 +3,12 @@
     .header_top__logo
       nagai_video
     .mini_search_area
-      %form
+      = form_with(url: search_videos_path, local: true, method: :get) do |f|
         .form_area
-          %input.form_area__text{type: "text", placeholder: "動画を検索"}
+          = f.text_field :keyword, class: "form_area__text", placeholder: "動画を検索"
           %label.form_area__btn
             = icon('fas', 'search')
-            %input.form_area__btn--display{type: "submit", value: ""}
+            = f.submit "", class: "form_area__btn--display"
   .categorys
     =link_to "#", class:"categorys__category" do
       TOP

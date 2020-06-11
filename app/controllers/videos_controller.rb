@@ -29,6 +29,10 @@ class VideosController < ApplicationController
     @mylists = @user.mylists
   end
 
+  def search
+    @videos = Video.search(params[:keyword]).page(params[:page]).per(9)
+  end
+
   private
 
   def video_params

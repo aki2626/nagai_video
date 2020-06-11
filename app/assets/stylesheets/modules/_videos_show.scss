@@ -14,6 +14,9 @@
       margin: auto 0 auto 10px;  
       .form_area {
         display: flex;
+        &__text {
+          padding-left: 5px;;
+        }
         &__btn {
           background-color: tan;
           padding: 5px;
@@ -99,6 +102,7 @@
       .video_player {
         background-color: $white_brawn;
         height: 360px;
+        padding: auto;
       }
       .video_control {
         height: 36px;

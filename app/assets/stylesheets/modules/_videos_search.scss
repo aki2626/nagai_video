@@ -12,6 +12,7 @@
     &__text {
       width: 300px;
       height: 40px;
+      padding-left: 10px;
     }
     &__btn {
       background-color: #ffffff;
@@ -33,7 +34,8 @@
     .movie {
       height: 125px;
       width: 100%;
-      background-color: #dddddd;
+      border-bottom: 1px solid #dddddd;
+      // background-color: #dddddd;
       display: flex;
       margin-bottom: 10px;
       .left_content {
