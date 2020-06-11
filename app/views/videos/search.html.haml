@@ -12,7 +12,7 @@
       .movie
         .left_content
           .left_content__created_at
-            = video.created_at
+            = video.created_at.strftime("%Y/%m/%d %H:%M")
           .left_content__thumbnail
             = link_to video_path(video) do
               = image_tag(video.movie_url(:screenshot), class: "left_content__thumbnail")
