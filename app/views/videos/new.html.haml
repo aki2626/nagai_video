@@ -31,11 +31,9 @@
       .video_title__text
         動画タイトル
       = f.text_field :title, class: "video_title__form", placeholder: "動画タイトル"
-      -# %input.video_title__form{type: "text", placeholder: "動画タイトル"}
     .video_explain
       .video_explain__text
         動画説明文
-      -# %input.video_explain__form{type: "text", placeholder: "動画説明文を入力..."}
       = f.text_area :explain, class: "video_explain__form", placeholder: "動画説明文を入力..."
     .video_genre
       .video_genre__text
@@ -47,8 +45,5 @@
       .video_tags__text
         タグの設定
       = f.text_field :tag_list, value: @video.tag_list.join(","), class: "video_tags__form", placeholder: "タグを追加"
-      -# = f.fields_for :tag do |d|
-      -#   = f.collection_select :tag_id, Tag.all, :id, :name, {prompt: "タグを追加"}, class: "video_tags__form"
     .submit
       = f.submit '投稿する', class: "submit__btn"
-      -# %input{type: "submit", value: "投稿する", class: "submit__btn"}

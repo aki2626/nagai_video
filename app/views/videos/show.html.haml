@@ -17,7 +17,7 @@
     .user_information.information_list
       .user_information__image
       .user_information__name
-        永井
+        = @video.user.nickname
       .user_information__follow
         = icon('far', 'star', class: "user_information__follow--icon")
         = link_to "#" do
@@ -122,8 +122,6 @@
           %ul.user_mylists
             - @mylists.each do |mylist|
               %li.user_mylists__mylist
-                -# = form_for mylist, url: add_video_mylist_path(mylist) do |f|
-                -#   = f.submit "#{mylist.name}", class: "mylist_btn__submit"
                 = link_to add_video_mylist_path(mylist), method: :post do
                   = mylist.name
             =link_to "#", class: "user_mylists__mylist--new_mylist" do
