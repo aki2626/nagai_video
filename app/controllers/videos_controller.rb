@@ -7,6 +7,11 @@ class VideosController < ApplicationController
     #   @videos = Video..tagged_with("#{params[:tag_name]}")
     # end
     # if内の内容はtag_withメソッドを使用して受け取った:tag_nameを持つvideoを返すアクションになっています。
+    @videos_ranking = Video.ranking
+    @videos_latest = Video.includes(:mylists).limit(5).order('created_at DESC')
+    if user_signed_in?
+      @video_viewing_history = Video.history(current_user)
+    end
   end
 
   def new
@@ -25,8 +30,24 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @mylist = Mylist.new
+
     @user = current_user
-    @mylists = @user.mylists
+    if user_signed_in?
+      @mylists = @user.mylists
+    end
+    new_history = @video.viewing_histories.new
+    new_history.user_id = current_user.id
+    if current_user.viewing_histories.exists?(video_id: "#{params[:id]}")
+      old_history = current_user.viewing_histories.find_by(video_id: "#{params[:id]}")
+      old_history.destroy
+    end
+    new_history.save
+    viewing_histories_stock_limit = 10
+    histories = current_user.viewing_histories.all
+    if  histories.count > viewing_histories_stock_limit
+      histories[0].destroy
+    end
+
   end
 
   def search

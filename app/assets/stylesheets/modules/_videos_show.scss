@@ -74,7 +74,7 @@
       border-radius: 30px;
       padding: 0 8px;
       color: white;
-      line-height: 20px;
+      line-height: 34px;
     }
     .tags_lists {
       display: flex;
@@ -100,9 +100,15 @@
       width: 640px;
       border-right: 1px solid gray;
       .video_player {
-        background-color: $white_brawn;
-        height: 360px;
-        padding: auto;
+        background-color:$main_brawn_color;
+        height: 396px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__contents {
+          max-width: 100%;
+          height: auto;
+        }
       }
       .video_control {
         height: 36px;

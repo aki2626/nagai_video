@@ -26,53 +26,26 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル    
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-  .block
-    .title_area 
-      .title_area__text
-        視聴履歴
-      = link_to "#", class: "title_area__link" do
-        もっと見る
-    .movies
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル    
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
+      - @videos_ranking.each do |video| 
+        =link_to video_path(video), class:"movie" do
+          .movie__thumbnail
+            = image_tag(video.movie_url(:screenshot), class: "movie__thumbnail")
+          .movie__title
+            = video.title
+  - if user_signed_in? 
+    .block
+      .title_area 
+        .title_area__text
+          視聴履歴
+        = link_to "#", class: "title_area__link" do
+          もっと見る
+      .movies
+        - @video_viewing_history.each do |video| 
+          =link_to video_path(video), class:"movie" do
+            .movie__thumbnail
+              = image_tag(video.movie_url(:screenshot), class: "movie__thumbnail")
+            .movie__title
+              = video.title
   .block
     .title_area 
       .title_area__text
@@ -80,23 +53,9 @@
       = link_to "#", class: "title_area__link" do
         もっと見る
     .movies
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル    
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
-      =link_to "#", class:"movie" do
-        .movie__thumbnail
-        .movie__title
-          タイトル  
+      - @videos_latest.each do |video| 
+        =link_to video_path(video), class:"movie" do
+          .movie__thumbnail
+            = image_tag(video.movie_url(:screenshot), class: "movie__thumbnail")
+          .movie__title
+            = video.title 

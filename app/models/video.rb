@@ -3,6 +3,8 @@ class Video < ApplicationRecord
 
   has_many  :video_mylists, foreign_key: 'video_id'
   has_many  :mylists, through: :video_mylists
+  has_many  :viewing_histories, dependent: :destroy 
+
   belongs_to  :user
   validates :movie,             presence: true
   validates :title,             presence: true
@@ -17,4 +19,7 @@ class Video < ApplicationRecord
 
   # 動画検索機能の定義
   scope :search, -> (search){ where('title LIKE ?', "%#{search}%" )}
+
+  scope :ranking, -> { find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))}
+  scope :history, -> (user){ find(user.viewing_histories.all.order('created_at DESC').pluck(:video_id))}
 end
