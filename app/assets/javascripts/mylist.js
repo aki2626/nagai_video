@@ -26,4 +26,19 @@ $(function(){
     $('.user_mylists').removeClass("display_none");
     $('.user_mylists').addClass("display_show");
   });
+
+  $('.mylist_btn__submit').on("click", function(e){
+    e.preventDefault();
+    console.log("OK");
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: formData,
+      datatype: 'json',
+      processData: false,
+      contentType: false
+    })
+  })
 });
