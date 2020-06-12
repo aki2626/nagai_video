@@ -3,6 +3,8 @@ class Video < ApplicationRecord
 
   has_many  :video_mylists, foreign_key: 'video_id'
   has_many  :mylists, through: :video_mylists
+  has_many  :viewing_histories, dependent: :destroy 
+
   belongs_to  :user
   validates :movie,             presence: true
   validates :title,             presence: true
