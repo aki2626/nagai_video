@@ -31,6 +31,14 @@ class VideosController < ApplicationController
     if user_signed_in?
       @mylists = @user.mylists
     end
+    new_history = @video.viewing_histories.new
+    new_history.user_id = current_user.id
+    if current_user.viewing_histories.exists?(video_id: "#{params[:id]}")
+      old_history = current_user.viewing_histories.find_by(video_id: "#{params[:id]}")
+      old_history.destroy
+    end
+    new_history.save
+
   end
 
   def search
