@@ -38,6 +38,11 @@ class VideosController < ApplicationController
       old_history.destroy
     end
     new_history.save
+    viewing_histories_stock_limit = 10
+    histories = current_user.viewing_histories.all
+    if  histories.count > viewing_histories_stock_limit
+      histories[0].destroy
+    end
 
   end
 
