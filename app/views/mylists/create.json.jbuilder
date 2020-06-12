@@ -1,2 +1,3 @@
+json.mylist_id  @mylist.id
 json.title  @mylist.title
-json.explain  @mylist.explain
+# json.video_id @video.id

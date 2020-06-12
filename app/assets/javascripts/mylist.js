@@ -1,4 +1,12 @@
 $(function(){
+  function buildHTML(mylist){
+    var html =
+    `<li class="user_mylists__mylist">
+      <a rel="nofollow" data-method="post" href="/videos/${video_id}/mylists/${mylist_id}/add">${title}
+      </a>
+    </li>`
+    return html;
+  }
   $('.left_box__icon').on("click", function(e){
     e.preventDefault();
     $('.relation_movies').removeClass("display_show");
@@ -38,6 +46,11 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $(".user_mylists").append(html);
+      $("form")[0].reset();
     })
   })
 });

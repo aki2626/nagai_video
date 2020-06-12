@@ -26,7 +26,7 @@ class MylistsController < ApplicationController
       redirect_to  root_path
     end
   end
-1
+
   private
   # def set_video
   #   binding.pry
