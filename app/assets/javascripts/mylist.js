@@ -27,16 +27,15 @@ $(function(){
     $('.user_mylists').addClass("display_show");
   });
 
-  $('.mylist_btn__submit').on("click", function(e){
+  $('#new_mylist').on("submit", function(e){
     e.preventDefault();
-    console.log("OK");
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: 'POST',
       data: formData,
-      datatype: 'json',
+      dataType: 'json',
       processData: false,
       contentType: false
     })

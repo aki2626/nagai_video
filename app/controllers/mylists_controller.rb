@@ -5,10 +5,12 @@ class MylistsController < ApplicationController
     @video = Video.find(params[:video_id])
     @mylist = Mylist.new(mylist_params)
     @mylist.videos << @video
-    binding.pry
-    if @mylist.save!
-      redirect_to root_path, notice: 'マイリストに追加しました'
+    if @mylist.save
+      respond_to do |fomrat|
+        format.json
+      end
     else
+      flash.now[:alert] = '必要事項を入力してください'
       redirect_to  root_path
     end
   end
