@@ -19,4 +19,7 @@ class Video < ApplicationRecord
 
   # 動画検索機能の定義
   scope :search, -> (search){ where('title LIKE ?', "%#{search}%" )}
+
+  scope :ranking, -> { find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))}
+  scope :history, -> (user){ find(user.viewing_histories.all.order('created_at DESC').pluck(:video_id))}
 end
