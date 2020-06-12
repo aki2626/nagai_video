@@ -1,0 +1,2 @@
+class ViewingHistory < ApplicationRecord
+end
