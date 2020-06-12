@@ -67,8 +67,9 @@
     .right_contents
       .register_area
         .left_box
-          = link_to "#", class: "left_box__icon" do
-            = icon('fas','folder-plus')
+          - if user_signed_in? 
+            = link_to "#", class: "left_box__icon" do
+              = icon('fas','folder-plus')
         .right_box
           = link_to "#", class: "right_box__icon" do
             = icon('fab','twitter-square', class: "right_box__icon--twitter")
@@ -121,24 +122,26 @@
             =link_to "#", class: "mylists_add__header--cancel" do
               ✖︎
           %ul.user_mylists
-            - @mylists.each do |mylist|
-              %li.user_mylists__mylist
-                = link_to add_video_mylist_path(mylist), method: :post do
-                  = mylist.name
-            =link_to "#", class: "user_mylists__mylist--new_mylist" do
-              ＋新規登録して作成
+            - if user_signed_in? 
+              - @mylists.each do |mylist|
+                %li.user_mylists__mylist
+                  = link_to add_video_mylist_path(mylist), method: :post do
+                    = mylist.name
+              =link_to "#", class: "user_mylists__mylist--new_mylist" do
+                ＋新規登録して作成
           .create_mylist.display_none
-            = form_for [@video, @mylist]  do |f|
-              .new_title
-                マイリスト
-              = f.text_field :name, class: "new_title__form", placeholder:"マイリスト名を入力してください"
-              .new_explain
-                マイリストコメント
-              = f.text_field :explain, class: "new_explain__form", placeholder: "省略化"
-              .mylist_btn
-                =link_to "#", class: "mylist_btn__cancel" do
-                  キャンセル
-                = f.submit '登録する', class: "mylist_btn__submit"
+            - if user_signed_in? 
+              = form_for [@video, @mylist]  do |f|
+                .new_title
+                  マイリスト
+                = f.text_field :name, class: "new_title__form", placeholder:"マイリスト名を入力してください"
+                .new_explain
+                  マイリストコメント
+                = f.text_field :explain, class: "new_explain__form", placeholder: "省略化"
+                .mylist_btn
+                  =link_to "#", class: "mylist_btn__cancel" do
+                    キャンセル
+                  = f.submit '登録する', class: "mylist_btn__submit"
   .comments_area
     コメント一覧
     .comment

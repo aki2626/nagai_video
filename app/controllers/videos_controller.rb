@@ -28,7 +28,9 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @mylist = Mylist.new
     @user = current_user
-    @mylists = @user.mylists
+    if user_signed_in?
+      @mylists = @user.mylists
+    end
   end
 
   def search
