@@ -13,11 +13,15 @@ Rails.application.routes.draw do
     end
     resources :mylists, only: [:create, :edit, :destroy] do
       member  do
-        post  'add'
+        post    'add'
       end
     end
   end
   resources :users, only:  [:show] do
-    resources :mylists, only: [:index,:show]
+    resources :mylists, only: [:index,:show] do
+      member do
+        delete  'mylist_destroy'
+      end
+    end
   end
 end

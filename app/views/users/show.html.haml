@@ -37,7 +37,7 @@
     .mylist_action
       =link_to "#", class: "mylist_action__link" do
         マイリストの編集
-      =link_to "#", class: "mylist_action__link" do
+      =link_to video_mylist_path(@latest_mylist.videos, @latest_mylist),method: :delete, class: "mylist_action__link" do
         マイリストの削除
     .mylist_videos
       - @latest_mylist.videos.each do |video|
@@ -69,7 +69,7 @@
               .video_date__created_at
                 = video.created_at.strftime("%Y/%m/%d %H:%M")
             .right_video__delete
-              =link_to "#", class: "right_video__delete--link" do
+              =link_to mylist_destroy_user_mylist_path(@user, @latest_mylist, video),method: :delete, class: "right_video__delete--link" do
                 消去する
 
 

@@ -39,9 +39,15 @@ class MylistsController < ApplicationController
   def destroy
     mylist = Mylist.find(params[:id])
     mylist.destroy
-    redirect_to root_path
+    redirect_to user_path(current_user)
   end
 
+  def mylist_destroy
+    mylist = Mylist.find(params[:id])    
+    video_mylist = mylist.video_mylists.find_by("video_id = #{params[:format]}")
+    video_mylist.destroy
+    redirect_to user_mylist_path(params[:id],params[:user_id])
+  end
   private
   # def set_video
   #   binding.pry
