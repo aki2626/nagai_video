@@ -31,4 +31,49 @@
         =link_to "#",class: "side_links__link" do
           投稿動画一覧
   .main_videos
+    .mylist_title
+      第一交通
+    .mylist_action
+      =link_to "#", class: "mylist_action__link" do
+        編集
+      =link_to "#", class: "mylist_action__link" do
+        マイリストの削除
+    .mylist_videos
+      .video
+        .left_video
+          .video_thumbnail
+            = link_to "#", class: "video_thumbnail__link" do
+              ここに動画入る
+        .right_video
+          = link_to "#", class: "right_video__title" do
+            Tシャツの正しい畳み方
+          .video_details
+            .video_details__list
+              .video_details__list--text
+                再生：
+              .video_details__list--text
+                705,123
+            .video_details__list
+              .video_details__list--text
+                コメント
+              .video_details__list--text
+                800
+            .video_details__list
+              .video_details__list--text
+                マイリスト
+              .video_details__list--text
+                200
+          .video__date
+            .video_date__created_at
+              2007年12月23日01:29/
+            .video_date__registrationed_at
+              2014年10月10日02:02
+          .right_video__delete
+            =link_to "#", class: "right_video__delete--link" do
+              消去する
+
+
+
+
+
 

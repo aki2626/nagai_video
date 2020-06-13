@@ -19,5 +19,47 @@
   .side_bar {
     background-color: #f8f8f8f8;
     width: 200px;
+    margin-right: 10px;
+  }
+  .main_videos {
+    background-color: #f8f8f8;
+    width: calc(100% - 200px - 10px);
+    .mylist_title {
+    }
+    .mylist_action {
+      display: flex;
+    }
+    .mylist_videos {
+      .video {
+        display: flex;
+        margin: 10px;
+        .left_video {
+          margin-right: 10px;
+          .video_thumbnail {
+            background-color: darkorange;
+            height: 128px;
+            width: 218px;
+          }
+        }
+        .right_video {
+          &__title {
+            font-size: 20px;
+            font-weight: bold;
+          }
+          .video_details {
+            display: flex;
+            &__list {
+              display: flex;
+              &--text {
+
+              }
+            }
+          }
+          .video_date {
+            display: flex;
+          }
+        }
+      }
+    }
   }
 }
