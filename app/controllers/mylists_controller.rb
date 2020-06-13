@@ -1,6 +1,14 @@
 class MylistsController < ApplicationController
   # before_action :set_video
 
+  def index
+    @mylist = Mylist.find(params[:mylist_id])
+  end
+  
+  def show
+    @mylist = Mylist.find(params[:id])
+  end
+
   def create
     @video = Video.find(params[:video_id])
     @mylist = Mylist.new(mylist_params)

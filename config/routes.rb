@@ -17,5 +17,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only:  [:show]
+  resources :users, only:  [:show] do
+    resources :mylists, only: [:index,:show]
+  end
 end

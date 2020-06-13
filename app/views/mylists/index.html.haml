@@ -1,0 +1,8 @@
+.movies
+  = @mylist.name
+  = @mylist.explain
+  - @mylist.videos do |video|       
+    .movie__thumbnail
+      = image_tag(video.movie_url(:screenshot), class: "movie__thumbnail")
+    .movie__title
+      = video.title
