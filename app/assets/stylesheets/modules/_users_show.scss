@@ -1,0 +1,14 @@
+.profile {
+  width: $main_content_width;
+  margin: auto;
+  padding: 10px;
+  background-color: #f8f8f8f8;
+  border: 2px solid black;
+  display: flex;
+  &__image {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    margin-right: 10px;
+  }
+}

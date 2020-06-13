@@ -10,8 +10,10 @@
             = icon('fas', 'search')
             = f.submit "", class: "form_area__btn--display"
 .profile
-  .profile_image  
+  .profile__image  
     ここに顔写真が来るようにします
   .profile_information
-    ジャパニーズさんのニコニコマイページ
-  .profile_links
+    .profile_information__name
+      ジャパニーズさん
+    =link_to "#", class: "user_edit" do
+      アカウント情報の変更
