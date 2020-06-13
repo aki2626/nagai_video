@@ -12,7 +12,7 @@
         =link_to "#" , class: "right_box__list--link" do
           (-o-)
       %li.right_box__list
-        =link_to "#" , class: "right_box__list--link" do
+        =link_to user_path(current_user) , class: "right_box__list--link" do
           ジャパニーズさん
       - if current_user
         %li.right_box__list
@@ -25,8 +25,8 @@
         メニュー▼
         %ul.menu.display_none#js_menu
           %li.menu__list
-            =link_to "#" , class: "menu__list--link" do
-              マイリスト
+            =link_to user_path(current_user), class: "menu__list--link" do
+              マイページ
           %li.menu__list
             =link_to "#" , class: "menu__list--link" do
               フォロー
