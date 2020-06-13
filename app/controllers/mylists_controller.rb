@@ -6,7 +6,8 @@ class MylistsController < ApplicationController
     @mylist = Mylist.new(mylist_params)
     @mylist.videos << @video
     if @mylist.save
-      respond_to do |fomrat|
+      respond_to do |format|
+        format.html 
         format.json
       end
     else

@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(mylist){
     var html =
     `<li class="user_mylists__mylist">
-      <a rel="nofollow" data-method="post" href="/videos/${video_id}/mylists/${mylist_id}/add">${title}
+      <a rel="nofollow" data-method="post" href="/videos/${mylist.video_id}/mylists/${mylist.mylist_id}/add">${mylist.name}
       </a>
     </li>`
     return html;
@@ -21,7 +21,7 @@ $(function(){
     $('.relation_movies').removeClass("display_none");
     $('.relation_movies').addClass("display_show");
   });
-  $('.user_mylists__mylist--new_mylist').on("click", function(e){
+  $('.new_mylist_link').on("click", function(e){
     e.preventDefault();
     $('.user_mylists').addClass("display_none");
     $('.create_mylist').removeClass("display_none");
@@ -35,6 +35,7 @@ $(function(){
     $('.user_mylists').addClass("display_show");
   });
 
+  // マイリストの新規作成
   $('#new_mylist').on("submit", function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -51,6 +52,13 @@ $(function(){
       var html = buildHTML(data);
       $(".user_mylists").append(html);
       $("form")[0].reset();
+      $('.mylists_add').removeClass("display_show");
+      $('.mylists_add').addClass("display_none");
+      $('.relation_movies').removeClass("display_none");
+      $('.relation_movies').addClass("display_show");
     })
-  })
+    .fail(function(){
+      console.log("fail");
+    });
+  });
 });
