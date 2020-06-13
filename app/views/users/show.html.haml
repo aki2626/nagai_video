@@ -33,45 +33,44 @@
           投稿動画一覧
   .main_videos
     .mylist_title
-      第一交通
+      = @latest_mylist.name
     .mylist_action
       =link_to "#", class: "mylist_action__link" do
         編集
       =link_to "#", class: "mylist_action__link" do
         マイリストの削除
     .mylist_videos
-      .video
-        .left_video
-          .video_thumbnail
-            = link_to "#", class: "video_thumbnail__link" do
-              ここに動画入る
-        .right_video
-          = link_to "#", class: "right_video__title" do
-            Tシャツの正しい畳み方
-          .video_details
-            .video_details__list
-              .video_details__list--text
-                再生：
-              .video_details__list--text
-                705,123
-            .video_details__list
-              .video_details__list--text
-                コメント
-              .video_details__list--text
-                800
-            .video_details__list
-              .video_details__list--text
-                マイリスト
-              .video_details__list--text
-                200
-          .video__date
-            .video_date__created_at
-              2007年12月23日01:29/
-            .video_date__registrationed_at
-              2014年10月10日02:02
-          .right_video__delete
-            =link_to "#", class: "right_video__delete--link" do
-              消去する
+      - @latest_mylist.videos.each do |video|
+        .video
+          .left_video
+            .video_thumbnail
+              = link_to "#" do
+                = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
+          .right_video
+            = link_to "#", class: "right_video__title" do
+              = video.title
+            .video_details
+              .video_details__list
+                .video_details__list--title
+                  再生:
+                .video_details__list--text
+                  = video.impressionist_count
+              .video_details__list
+                .video_details__list--title
+                  コメント
+                .video_details__list--text
+                  800
+              .video_details__list
+                .video_details__list--title
+                  マイリスト
+                .video_details__list--text
+                  = video.mylists.length
+            .video__date
+              .video_date__created_at
+                = video.created_at.strftime("%Y/%m/%d %H:%M")
+            .right_video__delete
+              =link_to "#", class: "right_video__delete--link" do
+                消去する
 
 
 

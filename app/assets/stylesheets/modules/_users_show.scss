@@ -49,9 +49,10 @@
         .left_video {
           margin-right: 10px;
           .video_thumbnail {
-            background-color: darkorange;
-            height: 128px;
-            width: 218px;
+            &__link {
+              height: 128px;
+              width: 218px;
+            }
           }
         }
         .right_video {
@@ -63,8 +64,11 @@
             display: flex;
             &__list {
               display: flex;
-              &--text {
+              &--title {
 
+              }
+              &--text {
+                margin-right: 5px;
               }
             }
           }
