@@ -15,9 +15,10 @@
 .user_main_area {
   display: flex;
   width: $main_content_width;
-  margin: 30px auto 0;
+  margin: 30px auto;
   .side_bar {
     background-color: #f8f8f8f8;
+    border: 2px solid black;
     width: 200px;
     margin-right: 10px;
     .side_links {
@@ -34,10 +35,15 @@
   }
   .main_videos {
     background-color: #f8f8f8;
+    border: 2px solid black;
     width: calc(100% - 200px - 10px);
-    .mylist_title {
+    &__title {
+      background-color: black;
+      color: white;
       text-decoration: none;
       margin-bottom: 5px;
+      font-size: 24px;
+      padding-left: 5px;
     }
     .mylist_action {
       display: flex;
