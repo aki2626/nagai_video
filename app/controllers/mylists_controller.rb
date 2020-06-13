@@ -7,8 +7,10 @@ class MylistsController < ApplicationController
   
   def show
     @user = current_user
-    @mylist = Mylist.find(params[:id])
+    @mylist = Mylist.find(params[:user_id])
+    # binding.pryの結果user_idがmylist_idを実質的に持つため
   end
+
 
   def create
     @video = Video.find(params[:video_id])
@@ -32,6 +34,12 @@ class MylistsController < ApplicationController
     else
       redirect_to  root_path
     end
+  end
+
+  def destroy
+    mylist = Mylist.find(params[:id])
+    mylist.destroy
+    redirect_to root_path
   end
 
   private
