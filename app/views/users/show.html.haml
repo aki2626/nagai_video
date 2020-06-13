@@ -23,7 +23,7 @@
         マイリスト
         - @user.mylists.each do |mylist|
           %li.mylist_title
-            =link_to "#",class: "mylist_title__link" do
+            =link_to user_mylist_path(mylist),class: "mylist_title__link" do
               =mylist.name
       %li.side_links__link
         =link_to new_video_path,class: "side_links__link" do

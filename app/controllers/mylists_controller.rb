@@ -6,6 +6,7 @@ class MylistsController < ApplicationController
   end
   
   def show
+    @user = current_user
     @mylist = Mylist.find(params[:id])
   end
 
