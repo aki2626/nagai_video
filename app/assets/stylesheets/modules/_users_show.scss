@@ -12,3 +12,12 @@
     margin-right: 10px;
   }
 }
+.user_main_area {
+  display: flex;
+  width: $main_content_width;
+  margin: 30px auto 0;
+  .side_bar {
+    background-color: #f8f8f8f8;
+    width: 200px;
+  }
+}

@@ -11,9 +11,24 @@
             = f.submit "", class: "form_area__btn--display"
 .profile
   .profile__image  
-    ここに顔写真が来るようにします
   .profile_information
     .profile_information__name
       ジャパニーズさん
     =link_to "#", class: "user_edit" do
       アカウント情報の変更
+.user_main_area
+  .side_bar
+    %ul.side_links
+      %ul.mylist_links
+        マイリスト
+        %li.mylist_title
+          =link_to "#",class: "mylist_title__link" do
+            とりあえずマイリスト
+      %li.side_links__link
+        =link_to "#",class: "side_links__link" do
+          投稿する
+      %li.side_links__link
+        =link_to "#",class: "side_links__link" do
+          投稿動画一覧
+  .main_videos
+
