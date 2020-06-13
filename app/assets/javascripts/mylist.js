@@ -61,4 +61,8 @@ $(function(){
       console.log("fail");
     });
   });
+  $('.add_mylist_js').on("click", function(e){
+    e.preventDefault();
+    console.log("OK");
+  });
 });

@@ -125,7 +125,7 @@
             %ul.user_mylists            
               - @mylists.each do |mylist|
                 %li.user_mylists__mylist
-                  = link_to add_video_mylist_path(mylist), method: :post do
+                  = link_to add_video_mylist_path(mylist), method: :post, class:"add_mylist_js" do
                     = mylist.name
             =link_to "#", class: "new_mylist_link" do
               ＋新規登録して作成
