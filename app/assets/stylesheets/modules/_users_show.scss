@@ -20,11 +20,24 @@
     background-color: #f8f8f8f8;
     width: 200px;
     margin-right: 10px;
+    .side_links {
+      .mylist_links {
+        .mylist_title {
+          margin-bottom: 5px;
+          &__link {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
   }
   .main_videos {
     background-color: #f8f8f8;
     width: calc(100% - 200px - 10px);
     .mylist_title {
+      text-decoration: none;
+      margin-bottom: 5px;
     }
     .mylist_action {
       display: flex;
