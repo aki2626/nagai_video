@@ -34,56 +34,59 @@
       }
     }
   }
-  .main_videos {
-    background-color: #f8f8f8;
-    border: 2px solid black;
-    width: 100%;
-    &__title {
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      margin-bottom: 5px;
-      font-size: 24px;
-      padding-left: 5px;
-    }
-    .mylist_action {
-      display: flex;
-      &__link {
-        margin: 0 5px;
-      } 
-    }
-    .mylist_videos {
-      .video {
+  .right_contents {
+    .main_videos {
+      background-color: #f8f8f8;
+      border: 2px solid black;
+      width: 100%;
+      margin-bottom: 30px;
+      &__title {
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+        font-size: 24px;
+        padding-left: 5px;
+      }
+      .mylist_action {
         display: flex;
-        margin: 10px;
-        .left_video {
-          margin-right: 10px;
-          .video_thumbnail {
-            &__link {
-              height: 128px;
-              width: 218px;
+        &__link {
+          margin: 0 5px;
+        } 
+      }
+      .mylist_videos {
+        .video {
+          display: flex;
+          margin: 10px;
+          .left_video {
+            margin-right: 10px;
+            .video_thumbnail {
+              &__link {
+                height: 128px;
+                width: 218px;
+              }
             }
           }
-        }
-        .right_video {
-          &__title {
-            font-size: 20px;
-            font-weight: bold;
-          }
-          .video_details {
-            display: flex;
-            &__list {
+          .right_video {
+            &__title {
+              font-size: 20px;
+              font-weight: bold;
+            }
+            .video_details {
               display: flex;
-              &--title {
+              &__list {
+                display: flex;
+                &--title {
 
-              }
-              &--text {
-                margin-right: 5px;
+                }
+                &--text {
+                  margin-right: 5px;
+                }
               }
             }
-          }
-          .video_date {
-            display: flex;
+            .video_date {
+              display: flex;
+            }
           }
         }
       }
