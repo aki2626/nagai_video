@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only:  [:show] do
+  resources :users, only:  [:show,:edit,:update] do
     resources :mylists, only: [:index,:show] do
       member do
         delete  'mylist_destroy'
