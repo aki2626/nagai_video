@@ -1,7 +1,7 @@
 class Video < ApplicationRecord
   mount_uploader :movie, MovieUploader
 
-  has_many  :video_mylists, foreign_key: 'video_id'
+  has_many  :video_mylists, foreign_key: 'video_id', dependent: :destroy 
   has_many  :mylists, through: :video_mylists
   has_many  :viewing_histories, dependent: :destroy 
 

@@ -1,0 +1,73 @@
+.header
+  .header_top
+    .header_top__logo
+      nagai_video
+    .mini_search_area
+      = form_with(url: search_videos_path, local: true, method: :get) do |f|
+        .form_area
+          = f.text_field :keyword, class: "form_area__text", placeholder: "動画を検索"
+          %label.form_area__btn
+            = icon('fas', 'search')
+            = f.submit "", class: "form_area__btn--display"
+.profile
+  .profile__image  
+  .profile_information
+    .profile_information__name
+      = @user.nickname
+    =link_to "#", class: "user_edit" do
+      アカウント情報の変更
+.user_main_area
+  .side_bar
+    %ul.side_links
+      %ul.mylist_links
+        マイリスト
+        - @user.mylists.each do |mylist|
+          %li.mylist_title
+            =link_to "#",class: "mylist_title__link" do
+              =mylist.name
+      %li.side_links__link
+        =link_to new_video_path,class: "side_links__link" do
+          投稿する
+      %li.side_links__link
+        =link_to "#",class: "side_links__link" do
+          投稿動画一覧
+  .main_videos
+    .main_videos__title
+      = @latest_mylist.name
+    .mylist_action
+      =link_to "#", class: "mylist_action__link" do
+        マイリストの編集
+      =link_to "#", class: "mylist_action__link" do
+        マイリストの削除
+    .mylist_videos
+      - @latest_mylist.videos.each do |video|
+        .video
+          .left_video
+            .video_thumbnail
+              = link_to "#" do
+                = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
+          .right_video
+            = link_to "#", class: "right_video__title" do
+              = video.title
+            .video_details
+              .video_details__list
+                .video_details__list--title
+                  再生:
+                .video_details__list--text
+                  = video.impressionist_count
+              .video_details__list
+                .video_details__list--title
+                  コメント
+                .video_details__list--text
+                  800
+              .video_details__list
+                .video_details__list--title
+                  マイリスト
+                .video_details__list--text
+                  = video.mylists.length
+            .video__date
+              .video_date__created_at
+                = video.created_at.strftime("%Y/%m/%d %H:%M")
+            .right_video__delete
+              =link_to "#", class: "right_video__delete--link" do
+                消去する
