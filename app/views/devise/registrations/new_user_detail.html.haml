@@ -5,6 +5,10 @@
     必要事項を全て入力してください
   = form_for(@user_detail) do |f|
     .registration__field
+      = f.label :"アイコン"
+      %br/
+      = f.file_field :image, class: "registration__field--image_form"
+    .registration__field
       = f.label :"性別"
       %br/
       = f.select :gender, [["男性",0], ["女性",1]],{prompt: "選択してください"}, {class: "registration__field--form"}

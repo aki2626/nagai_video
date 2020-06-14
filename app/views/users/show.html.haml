@@ -21,10 +21,13 @@
     %ul.side_links
       %ul.mylist_links
         マイリスト
-        - @user.mylists.each do |mylist|
-          %li.mylist_title
-            =link_to user_mylist_path(mylist),class: "mylist_title__link" do
-              =mylist.name
+        - if @user.mylists.length 
+          - @user.mylists.each do |mylist|
+            %li.mylist_title
+              =link_to user_mylist_path(mylist),class: "mylist_title__link" do
+                =mylist.name
+        - else 
+          マイリストはありません
       %li.side_links__link
         =link_to new_video_path,class: "side_links__link" do
           投稿する
@@ -32,46 +35,49 @@
         =link_to "#",class: "side_links__link" do
           投稿動画一覧
   .main_videos
-    .main_videos__title
-      = @latest_mylist.name
-    .mylist_action
-      =link_to "#", class: "mylist_action__link" do
-        マイリストの編集
-      =link_to video_mylist_path(@latest_mylist.videos, @latest_mylist),method: :delete, class: "mylist_action__link" do
-        マイリストの削除
-    .mylist_videos
-      - @latest_mylist.videos.each do |video|
-        .video
-          .left_video
-            .video_thumbnail
-              = link_to "#" do
-                = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
-          .right_video
-            = link_to "#", class: "right_video__title" do
-              = video.title
-            .video_details
-              .video_details__list
-                .video_details__list--title
-                  再生:
-                .video_details__list--text
-                  = video.impressionist_count
-              .video_details__list
-                .video_details__list--title
-                  コメント
-                .video_details__list--text
-                  800
-              .video_details__list
-                .video_details__list--title
-                  マイリスト
-                .video_details__list--text
-                  = video.mylists.length
-            .video__date
-              .video_date__created_at
-                = video.created_at.strftime("%Y/%m/%d %H:%M")
-            .right_video__delete
-              =link_to mylist_destroy_user_mylist_path(@user, @latest_mylist, video),method: :delete, class: "right_video__delete--link" do
-                消去する
-
+    - if @latest_mylist 
+      .main_videos__title 
+        = @latest_mylist.name
+      .mylist_action
+        =link_to "#", class: "mylist_action__link" do
+          マイリストの編集
+        =link_to video_mylist_path(@latest_mylist.videos, @latest_mylist),method: :delete, class: "mylist_action__link" do
+          マイリストの削除
+      .mylist_videos
+        - @latest_mylist.videos.each do |video|
+          .video
+            .left_video
+              .video_thumbnail
+                = link_to "#" do
+                  = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
+            .right_video
+              = link_to "#", class: "right_video__title" do
+                = video.title
+              .video_details
+                .video_details__list
+                  .video_details__list--title
+                    再生:
+                  .video_details__list--text
+                    = video.impressionist_count
+                .video_details__list
+                  .video_details__list--title
+                    コメント
+                  .video_details__list--text
+                    800
+                .video_details__list
+                  .video_details__list--title
+                    マイリスト
+                  .video_details__list--text
+                    = video.mylists.length
+              .video__date
+                .video_date__created_at
+                  = video.created_at.strftime("%Y/%m/%d %H:%M")
+              .right_video__delete
+                =link_to mylist_destroy_user_mylist_path(@user, @latest_mylist, video),method: :delete, class: "right_video__delete--link" do
+                  消去する
+    - else 
+      .main_videos__title
+        マイリストは登録されていません。
 
 
 
