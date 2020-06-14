@@ -14,7 +14,7 @@
   .profile_information
     .profile_information__name
       = @user.nickname
-    =link_to "#", class: "user_edit" do
+    =link_to edit_user_registration_path(@user), class: "user_edit" do
       アカウント情報の変更
 .user_main_area
   .side_bar
