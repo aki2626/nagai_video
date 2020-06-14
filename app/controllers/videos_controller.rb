@@ -49,6 +49,12 @@ class VideosController < ApplicationController
     end
 
   end
+  def destroy
+    binding.pry
+    video = Video.find(params[:id])
+    video.destroy
+    redirect_to user_path(current_user)
+  end
 
   def search
     @videos = Video.search(params[:keyword]).page(params[:page]).per(9)

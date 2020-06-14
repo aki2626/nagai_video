@@ -62,7 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def user_detail_params
-    params.require(:user_detail).permit(:gender, :prefecture_id, :birth_date)
+    params.require(:user_detail).permit(:gender, :prefecture_id, :birth_date, :image)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
