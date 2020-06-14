@@ -1,0 +1,28 @@
+.registration
+  %h2.registration__title 
+    新規登録フォーム (1/2)
+  .registration__explain
+    必要事項を全て入力してください
+  = form_for(@user) do |f|
+    .registration__field
+      = f.label :"ニックネーム"
+      %br/
+      = f.text_field :nickname
+    .registration__field
+      = f.label :"メールアドレス"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .registration__field
+      = f.label :"パスワード"
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} 文字以上 )
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+    .registration__field
+      = f.label :"パスワード確認用"
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .registration__actions
+      = f.submit "次の入力内容へ"
+  = render "devise/shared/links"

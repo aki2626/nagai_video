@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :users, only:  [:show,:edit,:update] do
     member  do
+      get     'edit_user_detail'
       patch   'update_user_detail'
     end
     resources :mylists, only: [:index,:show] do
