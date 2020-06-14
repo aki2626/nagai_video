@@ -121,14 +121,14 @@
               マイリストに登録
             =link_to "#", class: "mylists_add__header--cancel" do
               ✖︎
-          %ul.user_mylists
-            - if user_signed_in? 
+          - if user_signed_in? 
+            %ul.user_mylists            
               - @mylists.each do |mylist|
                 %li.user_mylists__mylist
-                  = link_to add_video_mylist_path(mylist), method: :post do
+                  = link_to add_video_mylist_path(mylist), method: :post, class:"add_mylist_js" do
                     = mylist.name
-              =link_to "#", class: "user_mylists__mylist--new_mylist" do
-                ＋新規登録して作成
+            =link_to "#", class: "new_mylist_link" do
+              ＋新規登録して作成
           .create_mylist.display_none
             - if user_signed_in? 
               = form_for [@video, @mylist]  do |f|

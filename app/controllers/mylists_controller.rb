@@ -17,8 +17,12 @@ class MylistsController < ApplicationController
     @mylist = Mylist.new(mylist_params)
     @mylist.videos << @video
     if @mylist.save
-      redirect_to root_path, notice: 'マイリストに追加しました'
+      respond_to do |format|
+        format.html 
+        format.json
+      end
     else
+      flash.now[:alert] = '必要事項を入力してください'
       redirect_to  root_path
     end
   end

@@ -1,4 +1,12 @@
 $(function(){
+  function buildHTML(mylist){
+    var html =
+    `<li class="user_mylists__mylist">
+      <a rel="nofollow" data-method="post" href="/videos/${mylist.video_id}/mylists/${mylist.mylist_id}/add">${mylist.name}
+      </a>
+    </li>`
+    return html;
+  }
   $('.left_box__icon').on("click", function(e){
     e.preventDefault();
     $('.relation_movies').removeClass("display_show");
@@ -13,7 +21,7 @@ $(function(){
     $('.relation_movies').removeClass("display_none");
     $('.relation_movies').addClass("display_show");
   });
-  $('.user_mylists__mylist--new_mylist').on("click", function(e){
+  $('.new_mylist_link').on("click", function(e){
     e.preventDefault();
     $('.user_mylists').addClass("display_none");
     $('.create_mylist').removeClass("display_none");
@@ -25,5 +33,36 @@ $(function(){
     $('.create_mylist').addClass("display_none");
     $('.user_mylists').removeClass("display_none");
     $('.user_mylists').addClass("display_show");
+  });
+
+  // マイリストの新規作成
+  $('#new_mylist').on("submit", function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $(".user_mylists").append(html);
+      $("form")[0].reset();
+      $('.mylists_add').removeClass("display_show");
+      $('.mylists_add').addClass("display_none");
+      $('.relation_movies').removeClass("display_none");
+      $('.relation_movies').addClass("display_show");
+    })
+    .fail(function(){
+      console.log("fail");
+    });
+  });
+  $('.add_mylist_js').on("click", function(e){
+    e.preventDefault();
+    console.log("OK");
   });
 });

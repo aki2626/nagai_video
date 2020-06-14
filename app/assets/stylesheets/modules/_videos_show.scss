@@ -227,11 +227,13 @@
             padding: 10px;
             &__mylist {
               padding-top: 5px;
-              &--new_mylist {
-                text-decoration: none;
-                color: black;
-              }
             }
+          }
+          .new_mylist_link{
+            padding: 10px;
+            padding-top: 5px;
+            text-decoration: none;
+            color: black;
           }
           .create_mylist{
             padding: 10px;
