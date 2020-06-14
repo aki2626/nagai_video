@@ -16,8 +16,7 @@ class MylistsController < ApplicationController
     @video = Video.find(params[:video_id])
     @mylist = Mylist.new(mylist_params)
     @mylist.videos << @video
-    binding.pry
-    if @mylist.save!
+    if @mylist.save
       redirect_to root_path, notice: 'マイリストに追加しました'
     else
       redirect_to  root_path
@@ -29,7 +28,7 @@ class MylistsController < ApplicationController
     @mylist = Mylist.find(params[:video_id])
     # ここのparamsのidは中間テーブルの関係でidとvideoが入れ替わるため。
     @mylist.videos << @video
-    if @mylist.save!
+    if @mylist.save
       redirect_to root_path, notice: '動画をマイリストに追加しました'
     else
       redirect_to  root_path
