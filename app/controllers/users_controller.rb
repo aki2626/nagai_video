@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(params[:id])
+    @user = User.find(params[:id])
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :edit and return
@@ -18,12 +18,12 @@ class UsersController < ApplicationController
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @user_detail = @user.build_user_detail
-    render :new_user_detail
+    render :edit_user_detail
   end
 
   def update_user_detail
-    @user = User.new(session["devise.regist_data"]["user"])
-    @user_detail = UserDetail.new(user_detail_params)
+    @user = User.find(session["devise.regist_data"]["user"])
+    @user_detail = UserDetail.find(user_detail_params)
     unless @user_detail.valid?
       flash.now[:alert] = @user_detail.errors.full_messages
       render :new_user_detail and return
