@@ -1,6 +1,6 @@
 .registration
   %h2.registration__title 
-    新規登録フォーム (1/2)
+    ユーザー情報更新フォーム (1/2)
   .registration__explain
     必要事項を全て入力してください
   = form_for(@user) do |f|
@@ -24,4 +24,4 @@
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .registration__actions
-      = f.submit "次の入力内容へ"
+      = f.submit "次の更新内容へ"
