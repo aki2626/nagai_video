@@ -8,8 +8,13 @@
   &__image {
     height: 50px;
     width: 50px;
-    background-color: gray;
+    background-color: #f8f8f8;
     margin-right: 10px;
+    text-align: center;
+    &--icon {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
 }
 .user_main_area {

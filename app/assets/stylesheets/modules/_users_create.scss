@@ -12,12 +12,22 @@
   &__field {
     font-size: 20px;
     margin-top: 10px;
-    &--form {
-      height: 30px;
-    }
-    &--image_form {
+    .image_form {
       height: 100px;
       width:  100px;
+      background-color: #f8f8f8;
+      text-align: center;
+      border: 2px solid black;
+      &__icon {
+        font-size: 60px;
+        line-height: 100px;
+      }
+      &__display {
+        display: none;
+      }
+    }
+    &--form {
+      height: 30px;
     }
   }
   &__actions {

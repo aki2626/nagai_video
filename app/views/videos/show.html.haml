@@ -16,6 +16,10 @@
   .information_lists
     .user_information.information_list
       .user_information__image
+        - if @user.user_detail.image_url
+          =image_tag(@user.user_detail.image_url, class: "user_information__image")
+        - else
+          =icon('fas','user', class: "image_form__image--icon")
       .user_information__name
         = @video.user.nickname
       .user_information__follow
