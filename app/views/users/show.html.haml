@@ -11,6 +11,10 @@
             = f.submit "", class: "form_area__btn--display"
 .profile
   .profile__image  
+    - if @user.user_detail.image
+      =image_tag(@user.user_detail.image_url, class: "profile__image ")
+    - else
+      =icon('fas','user', class: "profile__image --icon")
   .profile_information
     .profile_information__name
       = @user.nickname

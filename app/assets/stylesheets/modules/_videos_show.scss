@@ -54,7 +54,12 @@
       &__image {
         height: 40px;
         width: 40px;
-        background-color: tomato;
+        background-color: #f8f8f8;
+        text-align: center;
+        &--icon {
+          font-size: 30px;
+          line-height: 40px;
+        }
       }
       &__follow {
         display: flex;

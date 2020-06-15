@@ -31,23 +31,23 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @mylist = Mylist.new
 
-    @user = current_user
+    @user = @video.user
     if user_signed_in?
       @mylists = @user.mylists
-    end
-    new_history = @video.viewing_histories.new
-    new_history.user_id = current_user.id
-    if current_user.viewing_histories.exists?(video_id: "#{params[:id]}")
-      old_history = current_user.viewing_histories.find_by(video_id: "#{params[:id]}")
-      old_history.destroy
-    end
-    new_history.save
-    viewing_histories_stock_limit = 10
-    histories = current_user.viewing_histories.all
-    if  histories.count > viewing_histories_stock_limit
-      histories[0].destroy
-    end
 
+      new_history = @video.viewing_histories.new
+      new_history.user_id = current_user.id
+      if current_user.viewing_histories.exists?(video_id: "#{params[:id]}")
+        old_history = current_user.viewing_histories.find_by(video_id: "#{params[:id]}")
+        old_history.destroy
+      end
+      new_history.save
+      viewing_histories_stock_limit = 10
+      histories = current_user.viewing_histories.all
+      if  histories.count > viewing_histories_stock_limit
+        histories[0].destroy
+      end
+    end
   end
   def destroy
     binding.pry
