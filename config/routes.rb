@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         post    'add'
       end
     end
+    resources :comments, only: [:index, :create] 
   end
   resources :users, only:  [:show,:edit,:update] do
     member  do
