@@ -30,6 +30,8 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @mylist = Mylist.new
+    @comment = Comment.new
+    @comments = @video.comments.includes(:user)
 
     @user = @video.user
     if user_signed_in?
