@@ -3,11 +3,13 @@ class CommentsController < ApplicationController
     @video = Video.find(params[:video_id])
     @comment = @video.comments.new(comment_params)
     if @comment.save
-      redirect_to video_path(@video), notice: 'コメントが送信されました'
+      respond_to do |format|
+        format.json
+      end
     else
       @comments = @video.comments.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
-      redirect_to root_path
+      redirect_to video_path(@video)
     end
   end
 

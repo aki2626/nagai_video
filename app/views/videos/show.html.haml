@@ -62,10 +62,9 @@
     .left_contents
       .video_player
         =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player__contents")
-      = form_for @comment, url: video_comments_path(@video.id) do |f|
-        .comment_create
-          = f.text_field :text, class: "comment_create__form", placeholder: "コメント"
-          = f.submit "コメントする", class: "comment_create__btn"
+      = form_for @comment, url: video_comments_path(@video.id), html: { class: "comment_create"} do |f|
+        = f.text_field :text, class: "comment_create__form", placeholder: "コメント"
+        = f.submit "コメントする", class: "comment_create__btn"
     .right_contents
       .register_area
         .left_box
