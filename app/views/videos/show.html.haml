@@ -62,12 +62,10 @@
     .left_contents
       .video_player
         =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player__contents")
-      -# .video_control
-      -#   ここにいろんなアイコンを入れます。
-      %form
+      = form_for @comment, url: video_comments_path(@video.id) do |f|
         .comment_create
-          %input.comment_create__form{type: "text", placeholder: "コメント"}
-          %input.comment_create__btn{type: "submit", value: "コメントする"}
+          = f.text_field :text, class: "comment_create__form", placeholder: "コメント"
+          = f.submit "コメントする", class: "comment_create__btn"
     .right_contents
       .register_area
         .left_box
