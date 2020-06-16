@@ -31,7 +31,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @mylist = Mylist.new
     @comment = Comment.new
-    @comments = @video.comments.includes(:user)
+    @comments = @video.comments.includes(:user).order('created_at DESC')
 
     @user = @video.user
     if user_signed_in?
@@ -52,7 +52,6 @@ class VideosController < ApplicationController
     end
   end
   def destroy
-    binding.pry
     video = Video.find(params[:id])
     video.destroy
     redirect_to user_path(current_user)
