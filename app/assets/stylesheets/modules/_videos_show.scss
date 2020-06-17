@@ -282,7 +282,9 @@
   .comments_area {
     width: 1024px;
     margin: 20px 0px 0px 0px;
-    padding-bottom: 50px;
+    height: 300px;
+    overflow: scroll;
+    margin-bottom: 50px;
     .comment {
       margin-top: 10px;
       display: flex;
