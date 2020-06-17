@@ -11,5 +11,11 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(comment){
+      console.log(comment);
+    })
+    .fail(function() {
+      console.log("NG");
+    })
   });
 });
