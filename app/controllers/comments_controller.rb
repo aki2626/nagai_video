@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def create
+    binding.pry
     @video = Video.find(params[:video_id])
     @comment = @video.comments.new(comment_params)
     if @comment.save
