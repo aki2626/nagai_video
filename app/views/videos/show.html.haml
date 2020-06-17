@@ -62,12 +62,9 @@
     .left_contents
       .video_player
         =video_tag(@video.movie_url, autoplay: true, preload: true, controls: true, class: "video_player__contents")
-      -# .video_control
-      -#   ここにいろんなアイコンを入れます。
-      %form
-        .comment_create
-          %input.comment_create__form{type: "text", placeholder: "コメント"}
-          %input.comment_create__btn{type: "submit", value: "コメントする"}
+      = form_for @comment, url: video_comments_path(@video.id), html: { class: "comment_create"} do |f|
+        = f.text_field :text, class: "comment_create__form", placeholder: "コメント"
+        = f.submit "コメントする", class: "comment_create__btn"
     .right_contents
       .register_area
         .left_box
@@ -148,17 +145,13 @@
                   = f.submit '登録する', class: "mylist_btn__submit"
   .comments_area
     コメント一覧
-    .comment
-      .comment__user_icon
-      .comment_right
-        .comment_right__username
-          永井
-        .comment_right__text
-          流石の面白さ
-    .comment
-      .comment__user_icon
-      .comment_right
-        .comment_right__username
-          永井
-        .comment_right__text
-          流石の面白さ
+    - @comments.each do |comment|
+      .comment
+        .comment__user_icon
+          - if comment.user.user_detail.image_url
+            = image_tag(comment.user.user_detail.image_url, class: "comment__user_icon")
+        .comment_right
+          .comment_right__username
+            = comment.user.nickname
+          .comment_right__text
+            = comment.text

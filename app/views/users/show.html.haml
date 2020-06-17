@@ -11,7 +11,7 @@
             = f.submit "", class: "form_area__btn--display"
 .profile
   .profile__image  
-    - if @user.user_detail.image
+    - if @user.user_detail.image_url
       =image_tag(@user.user_detail.image_url, class: "profile__image ")
     - else
       =icon('fas','user', class: "profile__image --icon")
@@ -53,10 +53,10 @@
             .video
               .left_video
                 .video_thumbnail
-                  = link_to "#" do
+                  = link_to video_path(video.id) do
                     = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
               .right_video
-                = link_to "#", class: "right_video__title" do
+                = link_to video_path(video.id), class: "right_video__title" do
                   = video.title
                 .video_details
                   .video_details__list
@@ -92,10 +92,10 @@
             .video
               .left_video
                 .video_thumbnail
-                  = link_to "#" do
+                  = link_to video_path(video.id) do
                     = image_tag(video.movie_url(:screenshot), class: "video_thumbnail__link")
               .right_video
-                = link_to "#", class: "right_video__title" do
+                = link_to video_path(video.id), class: "right_video__title" do
                   = video.title
                 .video_details
                   .video_details__list
