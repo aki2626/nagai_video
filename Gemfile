@@ -74,3 +74,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'impressionist', '~>1.6.1'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
