@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     collection do 
       get 'search'
     end
+    member do
+      get 'genre'
+    end
     resources :mylists, only: [:create, :edit, :destroy] do
       member  do
         post    'add'
