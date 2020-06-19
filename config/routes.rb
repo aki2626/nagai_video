@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'genre'
+      get 'tag'
     end
     resources :mylists, only: [:create, :edit, :destroy] do
       member  do

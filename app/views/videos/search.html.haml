@@ -8,8 +8,9 @@
           = f.submit "", class: "form_area__btn--display"
 .search_result
   .search_word
-    = @search
-    の検索一覧
+    - unless @search == ""
+      = @search
+      の検索一覧
   .movies
     - @videos.each do |video|
       .movie

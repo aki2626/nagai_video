@@ -66,6 +66,12 @@ class VideosController < ApplicationController
     @videos = Video.where(genre_id: params[:id]).includes([:mylists, :comments]).page(params[:page]).per(9)
     @genre = Genre.find(params[:id])
   end
+
+  def tag
+    @tag = params[:tag_name]
+    @videos = Video.tagged_with("#{params[:tag_name]}").includes([:mylists, :comments]).page(params[:page]).per(9)
+  end
+  
   private
 
   def video_params

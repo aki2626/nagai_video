@@ -40,7 +40,7 @@
       .information_list__title
         コメント数
       .information_list__text
-        970
+        = @video.comments.length
     .information_list
       .information_list__title
         マイリスト数
@@ -56,7 +56,7 @@
       タグ編集
     .tags_lists
       - @video.tag_list.each do |tag|
-        = link_to "#", class:"tags_lists__tag" do
+        = link_to tag_video_path(tag_name: tag), class:"tags_lists__tag" do
           = tag
   .main_contents
     .left_contents
