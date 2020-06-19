@@ -45,7 +45,7 @@
     .title_area 
       .title_area__text
         新着動画
-      = link_to "#", class: "title_area__link" do
+      = link_to latest_index_videos_path, class: "title_area__link" do
         もっと見る
     .movies
       - @videos_latest.each do |video| 

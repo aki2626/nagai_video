@@ -8,9 +8,11 @@
           = f.submit "", class: "form_area__btn--display"
 .search_result
   .search_word
-    ランキング一覧
+    新着一覧
   .movies
-    - unless @videos.length == 0 
+    - if @videos.length == 0 
+      該当する動画はありません
+    - else
       - @videos.each do |video|
         .movie
           .left_content
@@ -37,5 +39,4 @@
                 マイ
               %li.detail_information__date
                 = video.mylists.length
-    - else
-      該当する動画はありません
+    = paginate @videos

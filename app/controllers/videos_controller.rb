@@ -75,6 +75,11 @@ class VideosController < ApplicationController
   def ranking_index
     @videos = Video.ranking_20
   end
+
+  def latest_index
+    @videos = Video.includes([:mylists, :comments]).order('created_at DESC').page(params[:page]).per(9)
+  end
+
   private
 
   def video_params
