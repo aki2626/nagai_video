@@ -1,14 +1,10 @@
 class VideosController < ApplicationController
   impressionist :actions=>[:show]
+  before_action :login_confirmation, only: %i[new create destroy]
   
   def index
-    # @videos = Video.includes(:tags)
-    # if @params[:tag_name]
-    #   @videos = Video..tagged_with("#{params[:tag_name]}")
-    # end
-    # if内の内容はtag_withメソッドを使用して受け取った:tag_nameを持つvideoを返すアクションになっています。
     @videos_ranking = Video.ranking
-    @videos_latest = Video.includes(:mylists).limit(5).order('created_at DESC')
+    @videos_latest = Video.includes([:mylists, :comments]).limit(5).order('created_at DESC')
     if user_signed_in?
       @video_viewing_history = Video.history(current_user)
     end
@@ -29,9 +25,11 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @ranking_videos = Video.ranking
     @mylist = Mylist.new
     @comment = Comment.new
     @comments = @video.comments.includes(:user).order('created_at DESC')
+
 
     @user = @video.user
     if user_signed_in?
@@ -58,7 +56,26 @@ class VideosController < ApplicationController
   end
 
   def search
-    @videos = Video.search(params[:keyword]).page(params[:page]).per(9)
+    @videos = Video.search(params[:keyword]).includes([:mylists, :comments]).page(params[:page]).per(9)
+    @search = params[:keyword]
+  end
+
+  def genre 
+    @videos = Video.where(genre_id: params[:id]).includes([:mylists, :comments]).page(params[:page]).per(9)
+    @genre = Genre.find(params[:id])
+  end
+
+  def tag
+    @tag = params[:tag_name]
+    @videos = Video.tagged_with("#{params[:tag_name]}").includes([:mylists, :comments]).page(params[:page]).per(9)
+  end
+
+  def ranking_index
+    @videos = Video.ranking_20
+  end
+
+  def latest_index
+    @videos = Video.includes([:mylists, :comments]).order('created_at DESC').page(params[:page]).per(9)
   end
 
   private
@@ -69,5 +86,11 @@ class VideosController < ApplicationController
                                   :title,
                                   :genre_id,
                                   :tag_list).merge(user_id: current_user.id)
+  end
+  
+  def login_confirmation
+    unless user_signed_in?
+      redirect_to root_path, notice: 'ログインまたは、ユーザー新規登録してください'
+    end
   end
 end

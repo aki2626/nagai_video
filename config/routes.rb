@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   resources :videos, only: [:show, :new, :create, :destroy] do
     collection do 
       get 'search'
+      get 'ranking_index'
+      get 'latest_index'
+      get 'tag'
+    end
+    member do
+      get 'genre'
     end
     resources :mylists, only: [:create, :edit, :destroy] do
       member  do
