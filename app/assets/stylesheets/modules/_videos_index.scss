@@ -1,5 +1,4 @@
 .header {
-  height:96px;
   width: $main_content_width;
   margin: 5px auto 0px;
   .header_top {
@@ -28,15 +27,13 @@
   .categorys {
     width: 100%;
     background-color: $white_brawn;
-    height: 50px;
     display: flex;
     flex-wrap: wrap;
+    padding: 10px;
     &__category {
       background-color: white;
-      line-height: 20px;
-      height: 20px;
       margin: 5px 0 0 5px;
-      padding: 3px 5px;
+      padding: 5px;
       text-decoration: none;
       color:black;
     }

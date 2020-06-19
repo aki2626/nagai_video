@@ -11,7 +11,7 @@
             = f.submit "", class: "form_area__btn--display"
   .categorys
     - Genre.all.each do |genre|
-      =link_to "#", class:"categorys__category" do
+      =link_to genre_video_path(genre.id), class:"categorys__category" do
         = genre.name
 .main
   .block

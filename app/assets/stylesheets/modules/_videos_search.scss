@@ -30,6 +30,10 @@
 .search_result {
   width: $main_content_width;
   margin: auto;
+  .search_word {
+    font-weight: bold;
+    font-size: 20px;
+  }
   .movies {
     .movie {
       height: 125px;

@@ -7,6 +7,9 @@
           = icon('fas', 'search', class: "form_area__btn--icon")
           = f.submit "", class: "form_area__btn--display"
 .search_result
+  .search_word
+    = @search
+    の検索一覧
   .movies
     - @videos.each do |video|
       .movie
@@ -29,7 +32,7 @@
             %li.detail_information__title
               コメ
             %li.detail_information__date
-              23,406
+              = video.comments.length
             %li.detail_information__title
               マイ
             %li.detail_information__date

@@ -8,7 +8,7 @@ class VideosController < ApplicationController
     # end
     # if内の内容はtag_withメソッドを使用して受け取った:tag_nameを持つvideoを返すアクションになっています。
     @videos_ranking = Video.ranking
-    @videos_latest = Video.includes(:mylists).limit(5).order('created_at DESC')
+    @videos_latest = Video.includes([:mylists, :comments]).limit(5).order('created_at DESC')
     if user_signed_in?
       @video_viewing_history = Video.history(current_user)
     end
@@ -58,9 +58,14 @@ class VideosController < ApplicationController
   end
 
   def search
-    @videos = Video.search(params[:keyword]).page(params[:page]).per(9)
+    @videos = Video.search(params[:keyword]).includes([:mylists, :comments]).page(params[:page]).per(9)
+    @search = params[:keyword]
   end
 
+  def genre 
+    @videos = Video.where(genre_id: params[:id]).includes([:mylists, :comments]).page(params[:page]).per(9)
+    @genre = Genre.find(params[:id])
+  end
   private
 
   def video_params
