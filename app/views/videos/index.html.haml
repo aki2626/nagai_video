@@ -10,14 +10,9 @@
             = icon('fas', 'search')
             = f.submit "", class: "form_area__btn--display"
   .categorys
-    =link_to "#", class:"categorys__category" do
-      TOP
-    =link_to "#", class:"categorys__category" do
-      エンターテイメント
-    =link_to "#", class:"categorys__category" do
-      ラジオ
-    =link_to "#", class:"categorys__category" do
-      音楽
+    - Genre.all.each do |genre|
+      =link_to "#", class:"categorys__category" do
+        = genre.name
 .main
   .block
     .title_area 
