@@ -71,7 +71,10 @@ class VideosController < ApplicationController
     @tag = params[:tag_name]
     @videos = Video.tagged_with("#{params[:tag_name]}").includes([:mylists, :comments]).page(params[:page]).per(9)
   end
-  
+
+  def ranking_index
+    @videos = Video.ranking_20
+  end
   private
 
   def video_params
