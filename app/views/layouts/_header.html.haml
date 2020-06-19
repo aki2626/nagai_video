@@ -9,12 +9,10 @@
           動画
     %ul.right_box
       %li.right_box__list
-        =link_to "#" , class: "right_box__list--link" do
-          (-o-)
-      %li.right_box__list
         - if user_signed_in?
           =link_to user_path(current_user) , class: "right_box__list--link" do
-            ジャパニーズさん
+            = current_user.nickname
+            様
         - else
           ゲストさん
       - if current_user
