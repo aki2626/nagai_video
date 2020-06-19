@@ -176,6 +176,7 @@
       .right_main_contents{
         height: calc(100% - 44px);
         .relation_movies {
+          overflow: scroll;
           .movie_area {
             display: flex;
             width: 360px;
@@ -184,7 +185,6 @@
             .movie_thumbnail {
               width: 130px;
               height:74px;
-              background-color: blue;
             }
             .movie_information {
               margin: 2px;

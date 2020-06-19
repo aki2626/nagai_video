@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_action :login_confirmation, only: %i[show edit update update_user_detail]
   def show
     @user = User.find(params[:id])
     @latest_mylist = @user.mylists.first
@@ -38,5 +38,11 @@ class UsersController < ApplicationController
   end
   def user_detail_params
     params.require(:user_detail).permit(:gender, :prefecture_id, :birth_date, :image)
+  end
+
+  def login_confirmation
+    unless user_signed_in?
+      redirect_to root_path, notice: 'ログインまたは、ユーザー新規登録してください'
+    end
   end
 end

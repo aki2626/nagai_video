@@ -1,5 +1,6 @@
 class MylistsController < ApplicationController
   # before_action :set_video
+  before_action :login_confirmation
 
   def index
     @mylist = Mylist.find(params[:mylist_id])
@@ -60,4 +61,7 @@ class MylistsController < ApplicationController
     params.require(:mylist).permit(:name,:explain, video_ids: []).merge(user_id: current_user.id)
   end
 
+  unless user_signed_in?
+    redirect_to root_path, notice: 'ログインまたは、ユーザー新規登録してください'
+  end
 end
