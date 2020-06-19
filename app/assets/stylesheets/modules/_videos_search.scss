@@ -28,11 +28,14 @@
             background-color: $main_brawn_color;
             padding: 0 7px;
             color: white;
+            text-decoration: none;
           }
           &--unselect {
+            text-decoration: none;
             background-color: #ffffff;
             padding: 0 7px;
             border: 1px solid gray;
+            color: black;
           }
         }
       }

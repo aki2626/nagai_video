@@ -5,9 +5,9 @@
         .form_text
           = f.text_field :keyword, class: "form_text__title", placeholder: "動画を検索"
           .form_text__js
-            .form_text__js--select
+            = link_to "#", class: "form_text__js--select" do
               キーワード
-            #tag_js.form_text__js--unselect
+            = link_to "#", class: "form_text__js--unselect", id: "tag_js" do
               タグ
         .form_area__btn
           %label
@@ -19,9 +19,9 @@
         .form_text
           = f.text_field :tag_name, class: "form_text__title", placeholder: "動画を検索"
           .form_text__js
-            #keyword_js.form_text__js--title
+            = link_to "#", class: "form_text__js--unselect", id: "keyword_js"do
               キーワード
-            .form_text__js--tag
+            = link_to "#", class: "form_text__js--select" do
               タグ
         .form_area__btn
           %label
