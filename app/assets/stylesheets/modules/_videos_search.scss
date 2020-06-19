@@ -22,15 +22,17 @@
         &__js {
           position: absolute;
           left: 10px;
-          top: -23px;
+          top: -24px;
           display: flex;
-          &--title {
-            background-color: red;
+          &--select {
+            background-color: $main_brawn_color;
             padding: 0 7px;
+            color: white;
           }
-          &--tag {
-            background-color: blue;
+          &--unselect {
+            background-color: #ffffff;
             padding: 0 7px;
+            border: 1px solid gray;
           }
         }
       }
@@ -48,8 +50,11 @@
       }
     }
   }
-  .search_display {
+  .display_none {
     display: none;
+  }
+  .display_show {
+    display: block;
   }
 }
 .search_result {
