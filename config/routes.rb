@@ -12,10 +12,10 @@ Rails.application.routes.draw do
       get 'search'
       get 'ranking_index'
       get 'latest_index'
+      get 'tag'
     end
     member do
       get 'genre'
-      get 'tag'
     end
     resources :mylists, only: [:create, :edit, :destroy] do
       member  do
