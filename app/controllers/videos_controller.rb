@@ -32,7 +32,8 @@ class VideosController < ApplicationController
     if @video.update(video_params)
       redirect_to root_path, notice: '動画を更新しました。'
     else
-      render  :edit
+      flash[:notice] = @video.errors.full_messages
+      render  :edit 
     end
   end
 

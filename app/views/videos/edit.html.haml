@@ -5,15 +5,10 @@
   =form_for [@video] do |f|
     .video_input
       .video_input__text
-        動画
+        動画は変更できません
       %label
         .video_input__form
-          =icon('fas', 'arrow-circle-up', class: "video_input__form--icon")
-          .video_input__form--text
-            動画ファイルを選択
-          .video_input__form--text
-            またはドラッグ&ドロップしてください
-        = f.file_field :movie, class: "video_input__form--display"
+          = image_tag(@video.movie_url(:screenshot), class: "video_input__form--thumbnail")
     .video_title
       .video_title__text
         動画タイトル
@@ -27,7 +22,6 @@
         ジャンルの設定
       = f.fields_for :genre do |d|
         = f.collection_select :genre_id, Genre.all, :id, :name, {prompt: "ジャンルを選択"}, class: "video_genre__form"
-      -# ここはセレクトボックス にするか？
     .video_tags
       .video_tags__text
         タグの設定

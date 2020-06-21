@@ -68,7 +68,7 @@
                     .video_details__list--title
                       コメント
                     .video_details__list--text
-                      800
+                      = video.comments.length
                   .video_details__list
                     .video_details__list--title
                       マイリスト
@@ -107,7 +107,7 @@
                     .video_details__list--title
                       コメント
                     .video_details__list--text
-                      800
+                      = video.comments.length
                   .video_details__list
                     .video_details__list--title
                       マイリスト
@@ -118,7 +118,7 @@
                     = video.created_at.strftime("%Y/%m/%d %H:%M")
                 .right_video__delete
                   - if current_user.id == video.user_id
-                    =link_to "#", class: "right_video__delete--link" do
+                    =link_to edit_video_path(video), class: "right_video__delete--link" do
                       編集する
                     =link_to video_path(video),method: :delete, class: "right_video__delete--link" do
                       消去する
