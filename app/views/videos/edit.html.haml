@@ -1,0 +1,36 @@
+.new_header
+  .new_header__logo
+    nagai_video
+.video_form
+  =form_for [@video] do |f|
+    .video_input
+      .video_input__text
+        動画
+      %label
+        .video_input__form
+          =icon('fas', 'arrow-circle-up', class: "video_input__form--icon")
+          .video_input__form--text
+            動画ファイルを選択
+          .video_input__form--text
+            またはドラッグ&ドロップしてください
+        = f.file_field :movie, class: "video_input__form--display"
+    .video_title
+      .video_title__text
+        動画タイトル
+      = f.text_field :title, class: "video_title__form", placeholder: "動画タイトル"
+    .video_explain
+      .video_explain__text
+        動画説明文
+      = f.text_area :explain, class: "video_explain__form", placeholder: "動画説明文を入力..."
+    .video_genre
+      .video_genre__text
+        ジャンルの設定
+      = f.fields_for :genre do |d|
+        = f.collection_select :genre_id, Genre.all, :id, :name, {prompt: "ジャンルを選択"}, class: "video_genre__form"
+      -# ここはセレクトボックス にするか？
+    .video_tags
+      .video_tags__text
+        タグの設定
+      = f.text_field :tag_list, value: @video.tag_list.join(","), class: "video_tags__form", placeholder: "タグを追加"
+    .submit
+      = f.submit '投稿する', class: "submit__btn"

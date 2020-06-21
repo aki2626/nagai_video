@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'user_details', to: 'users/registrations#create_user_detail'
   end
   root 'videos#index'
-  resources :videos, only: [:show, :new, :create, :edit, :destroy] do
+  resources :videos, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do 
       get 'search'
       get 'ranking_index'
