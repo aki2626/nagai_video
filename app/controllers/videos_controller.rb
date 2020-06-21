@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   impressionist :actions=>[:show]
-  before_action :login_confirmation, only: %i[new create destroy]
+  before_action :login_confirmation, only: %i[new create edit update destroy]
   
   def index
     @videos_ranking = Video.ranking
@@ -20,6 +20,20 @@ class VideosController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @video = Video.find(params[:id])
+  end
+
+  def update
+    @video = Video.find(params[:id])
+    if @video.update(video_params)
+      redirect_to root_path, notice: '動画を更新しました。'
+    else
+      flash[:notice] = @video.errors.full_messages
+      render  :edit 
     end
   end
 
