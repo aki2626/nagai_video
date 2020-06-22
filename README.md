@@ -23,6 +23,22 @@ Things you may want to cover:
 
 * ...
 
+## 🌐 App URL
+
+### 本番環境にアップ後入力する
+
+## 💬 Usage
+
+`$ git clone https://github.com/aki2626/nagai_video.git`
+
+
+
+## :copyright: License
+
+###  
+
+# DB設計
+
 ## usersテーブル
 
 |Column|Type|Options|
