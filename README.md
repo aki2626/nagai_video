@@ -31,11 +31,30 @@ Things you may want to cover:
 
 `$ git clone https://github.com/aki2626/nagai_video.git`
 
+## 概要
 
+### 動画投稿、編集、削除
+### 動画閲覧
+### コメント投稿
+### ウィザード形式によるユーザー登録、編集
+### 動画検索（キーワード、タグ）
+### 閲覧数によるランキング表示
+### マイリスト作成、編集、削除
+
+## 実装予定の機能
+
+### パンくず機能
+### Super Chat機能
+### チャンネル開設機能
+### 動画投稿時のプレビュー機能
 
 ## :copyright: License
 
-###  
+###  [・　MIT](https://github.com/aki2626/nagai_video/blob/master/LICENSE)
+
+## :eyeglasses:  Author
+
+### [・　Github](https://github.com/aki2626/)
 
 # DB設計
 
