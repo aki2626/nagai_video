@@ -52,12 +52,18 @@
       .information_list__text
         = @video.genre.name
   .tags_area
-    .tag_edit
-      タグ編集
-    .tags_lists
-      - @video.tag_list.each do |tag|
-        = link_to tag_videos_path(tag_name: tag), class:"tags_lists__tag" do
-          = tag
+    .tags_area_regular
+      .tags_area_regular__title
+        タグ編集
+      .tags_lists
+        - @video.tag_list.each do |tag|
+          = link_to tag_videos_path(tag_name: tag), class:"tags_lists__tag" do
+            = tag
+    .tags_area_js
+      .tags_lists
+        .tags_lists__title
+          編集完了
+        
   .main_contents
     .left_contents
       .video_player
