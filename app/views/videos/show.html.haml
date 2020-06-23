@@ -60,10 +60,13 @@
           = link_to tag_videos_path(tag_name: tag), class:"tags_lists__tag" do
             = tag
     .tags_area_js
-      .tags_lists
-        .tags_lists__title
-          編集完了
-        
+      = link_to "#", class: "tags_area_js__title" do
+        編集完了
+      .tags_area_right
+        .tags_lists
+        .tags_add_form
+          %input.tags_add_form__text{type: "text", placeholder: "追加したいタグを入力してください"}
+          %input.tags_add_form__submit{type: "submit", value: "登録"}
   .main_contents
     .left_contents
       .video_player
