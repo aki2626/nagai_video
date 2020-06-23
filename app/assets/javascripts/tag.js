@@ -1,4 +1,15 @@
 $(function () {
+  function addTag(tag) {
+    let html = `
+    <div class="tags_lists__tag">
+      ${tag.name}
+
+    </div>
+    `;
+    $(".tags_js_index").append(html);
+
+  }
+
   $(".tags_area_regular__title").on("click", function(e) {
     e.preventDefault();
     let video_id = $(location).attr("pathname").replace(/[^0-9]/g, '');
@@ -8,8 +19,11 @@ $(function () {
       data: { id: video_id },
       dataType: "json"
     })
-    .done(function(tag) {
-      console.loxg(tag)
+    .done(function(tags) {
+      console.log(tags)
+      tags.forEach(function(tag) {
+        addTag(tag);
+      })
     })
     .fail(function() {
       console.log("失敗です。")
