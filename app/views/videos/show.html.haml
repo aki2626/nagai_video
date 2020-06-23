@@ -53,7 +53,7 @@
         = @video.genre.name
   .tags_area
     .tags_area_regular
-      .tags_area_regular__title
+      = link_to "#", class: "tags_area_regular__title" do
         タグ編集
       .tags_lists
         - @video.tag_list.each do |tag|
