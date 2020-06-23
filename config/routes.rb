@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   root 'videos#index'
   namespace :videos do 
-    resources :tags, only: [:index, :edit, :update, :delete]
+    resources :tags, only: [:index, :edit, :update, :destroy]
   end
   resources :videos, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do 
