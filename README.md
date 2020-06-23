@@ -23,11 +23,11 @@ Things you may want to cover:
 
 * ...
 
-## 🌐 App URL
+## 🌐 アプリケーションのURL
 
 ### 本番環境にアップ後入力する
 
-## 💬 Usage
+## 💬 使用方法
 
 `$ git clone https://github.com/aki2626/nagai_video.git`
 
@@ -48,11 +48,11 @@ Things you may want to cover:
 ### チャンネル開設機能
 ### 動画投稿時のプレビュー機能
 
-## :copyright: License
+## :copyright: ライセンス
 
 ###  [・　MIT](https://github.com/aki2626/nagai_video/blob/master/LICENSE)
 
-## :eyeglasses:  Author
+## :eyeglasses:  作成者
 
 ### [・　Github](https://github.com/aki2626/)
 
