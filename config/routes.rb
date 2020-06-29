@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     post 'user_details', to: 'users/registrations#create_user_detail'
   end
   root 'videos#index'
+  namespace :videos do 
+    resources :tags, only: [:index, :edit, :update, :destroy]
+  end
   resources :videos, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do 
       get 'search'

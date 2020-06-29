@@ -1,7 +1,8 @@
 class VideosController < ApplicationController
   impressionist :actions=>[:show]
   before_action :login_confirmation, only: %i[new create edit update destroy]
-  
+  before_action :set_video, only: %i[edit update show destroy]
+
   def index
     @videos_ranking = Video.ranking
     @videos_latest = Video.includes([:mylists, :comments]).limit(5).order('created_at DESC')
@@ -24,11 +25,9 @@ class VideosController < ApplicationController
   end
 
   def edit
-    @video = Video.find(params[:id])
   end
 
   def update
-    @video = Video.find(params[:id])
     if @video.update(video_params)
       redirect_to root_path, notice: '動画を更新しました。'
     else
@@ -38,7 +37,6 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
     @ranking_videos = Video.ranking
     @mylist = Mylist.new
     @comment = Comment.new
@@ -64,8 +62,7 @@ class VideosController < ApplicationController
     end
   end
   def destroy
-    video = Video.find(params[:id])
-    video.destroy
+    @video.destroy
     redirect_to user_path(current_user)
   end
 
@@ -100,6 +97,10 @@ class VideosController < ApplicationController
                                   :title,
                                   :genre_id,
                                   :tag_list).merge(user_id: current_user.id)
+  end
+
+  def set_video
+    @video = Video.find(params[:id])
   end
   
   def login_confirmation

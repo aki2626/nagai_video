@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
   before_action :login_confirmation, only: %i[show edit update update_user_detail]
+  before_action :set_user, only: %i[show edit update update_user_detail]  
+  
   def show
-    @user = User.find(params[:id])
     @latest_mylist = @user.mylists.first
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if  @user.update_attributes(user_params)
     else 
       flash.now[:alert] = @user.errors.full_messages
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
       flash.now[:alert] = @user_detail.errors.full_messages
       render :new_user_detail and return
     end
-    @user = User.find(params[:id])
     sign_in(:user, @user)
   end
 
@@ -38,6 +36,10 @@ class UsersController < ApplicationController
   end
   def user_detail_params
     params.require(:user_detail).permit(:gender, :prefecture_id, :birth_date, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def login_confirmation
