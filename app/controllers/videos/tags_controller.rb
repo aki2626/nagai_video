@@ -1,7 +1,6 @@
 class Videos::TagsController < ApplicationController
   def index
     @video = Video.find(params[:id])
-    binding.pry
     respond_to do |format|
       format.html
       format.json
