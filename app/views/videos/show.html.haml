@@ -40,7 +40,7 @@
       .information_list__title
         コメント数
       .information_list__text
-        970
+        = @video.comments.length
     .information_list
       .information_list__title
         マイリスト数
@@ -52,12 +52,23 @@
       .information_list__text
         = @video.genre.name
   .tags_area
-    .tag_edit
-      タグ編集
-    .tags_lists
-      - @video.tag_list.each do |tag|
-        = link_to "#", class:"tags_lists__tag" do
-          = tag
+    .tags_area_regular
+      = link_to "#", class: "tags_area_regular__title" do
+        タグ編集
+      .tags_lists
+        - @video.tag_list.each do |tag|
+          = link_to tag_videos_path(tag_name: tag), class:"tags_lists__tag" do
+            = tag
+    -# .tags_area_js
+    -#   = form_for @video, url: video_path(@video), method: :patch do |f|
+    -#     .tags_area_js_form
+    -#       = link_to "#", class: "tags_area_js_form__title" do
+    -#         編集完了
+    -#       .tags_area_right
+    -#         .tags_lists.tags_js_index
+    -#         .tags_add_form
+    -#           %input.tags_add_form__text{type: "text", placeholder: "追加したいタグを入力してください"}
+    -#           %input.tags_add_form__submit{type: "submit", value: "登録"}
   .main_contents
     .left_contents
       .video_player
@@ -82,40 +93,26 @@
             = icon('fas','share-alt-square', class: "right_box__icon--share")
       .right_main_contents
         .relation_movies
-          .movie_area
-            =link_to "#", class:"movie_thumbnail" do
-              サムネイル
-            .movie_information
-              .movie_information__created_at
-                2015/5/17 6:00 投稿
-              .movie_information__name
-                MHD モンハンどうでしょうR
-              .detail_information
-                .detail_information__views_number
-                  ▶︎ 3.5万
-                .detail_information__comments
-                  =icon('fas', 'comment-alt')
-                  583
-                .detail_information__mylists
-                  =icon('fas', 'folder')
-                  82
-          .movie_area
-            =link_to "#", class:"movie_thumbnail" do
-              サムネイル
-            .movie_information
-              .movie_information__created_at
-                2015/5/17 6:00 投稿
-              .movie_information__name
-                MHD モンハンどうでしょうR
-              .detail_information
-                .detail_information__views_number
-                  ▶︎ 3.5万
-                .detail_information__comments
-                  =icon('fas', 'comment-alt')
-                  583
-                .detail_information__mylists
-                  =icon('fas', 'folder')
-                  82
+          - @ranking_videos.each do |video|
+            .movie_area
+              =link_to video_path(video), class:"movie_thumbnail" do
+                = image_tag(video.movie_url(:screenshot), class: "movie_thumbnail")
+              .movie_information
+                .movie_information__created_at
+                  = video.created_at.strftime("%Y/%m/%d %H:%M")
+                  投稿
+                .movie_information__name
+                  = video.title
+                .detail_information
+                  .detail_information__views_number
+                    ▶︎ 
+                    = video.impressionist_count
+                  .detail_information__comments
+                    =icon('fas', 'comment-alt')
+                    = video.comments.length
+                  .detail_information__mylists
+                    =icon('fas', 'folder')
+                    = video.mylists.length
         .mylists_add.display_none
           .mylists_add__header 
             .mylists_add__header--title

@@ -72,27 +72,69 @@
     }
   }
   .tags_area {
-    display: flex;
     font-size: 14px;
-    .tag_edit {
-      background-color: #d2d2d2;
-      border-radius: 30px;
-      padding: 0 8px;
-      color: white;
-      line-height: 34px;
-    }
-    .tags_lists {
+    .tags_area_regular {
       display: flex;
-      flex-wrap: wrap;
-      &__tag {
-        text-decoration: none;
-        margin: 5px;
-        padding: 0 8px;
-        color:black;
-        background-color: white;
+      &__title {
+        background-color: #d2d2d2;
         border-radius: 30px;
-        border: 1px solid #d2d2d2; 
+        padding: 0 8px;
+        color: white;
+        line-height: 34px;
+        text-decoration: none;
       }
+      .tags_lists {
+        display: flex;
+        flex-wrap: wrap;
+        &__tag {
+          text-decoration: none;
+          margin: 5px;
+          padding: 0 8px;
+          color:black;
+          background-color: white;
+          border-radius: 30px;
+          border: 1px solid #d2d2d2; 
+        }
+      }
+    }
+    .tags_area_js {
+        .tags_area_js_form {
+          display: flex;
+          &__title {
+            background-color: #d2d2d2;
+            border-radius: 30px;
+            padding: 0 8px;
+            color: white;
+            line-height: 34px;
+            text-decoration: none;
+          }
+          .tags_area_right {          
+            .tags_lists {
+              display: flex;
+              &__tag {
+                text-decoration: none;
+                margin: 5px;
+                padding: 0 8px;
+                color:black;
+                background-color: white;
+                border-radius: 30px;
+                border: 1px solid #d2d2d2; 
+                display: flex;
+                &--delete {
+                  padding-left: 5px;
+                }
+              }
+            }
+            .tags_add_form {
+              display: flex;
+              &__text {
+              }
+            }
+        }
+      }
+    }
+    .display_none {
+      display: none;
     }
   }
   .main_contents {
@@ -176,6 +218,7 @@
       .right_main_contents{
         height: calc(100% - 44px);
         .relation_movies {
+          overflow: scroll;
           .movie_area {
             display: flex;
             width: 360px;
@@ -184,7 +227,6 @@
             .movie_thumbnail {
               width: 130px;
               height:74px;
-              background-color: blue;
             }
             .movie_information {
               margin: 2px;
