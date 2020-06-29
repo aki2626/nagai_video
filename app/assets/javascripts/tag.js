@@ -3,6 +3,9 @@ $(function () {
     let html = `
     <div class="tags_lists__tag">
       ${tag.name}
+      <a class= "tags_lists__tag--delete" rel="nofollow" data-method="delete" href= "/videos/tags/${tag.id}" >
+        ✖︎
+      </a>
     </div>
     `;
     $(".tags_js_index").append(html);
