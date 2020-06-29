@@ -25,8 +25,9 @@ $(function () {
         addTag(tag);
       })
     })
-    .fail(function() {
-      console.log("失敗です。")
+    .fail(function(tags) {
+      console.log("失敗です。");
+      console.log(tags);
     });
   });
   $(".tags_add_form__submit").on("click", function(e){
