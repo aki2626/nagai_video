@@ -12,5 +12,10 @@ class Videos::TagsController < ApplicationController
   def update
   end
   def destroy
+    binding.pry
+    tagging = Tagging.find(params[:id])
+    video = Video.find(tagging.taggable_id)
+    tagging.destroy
+    redirect_to video_path(video)
   end
 end
