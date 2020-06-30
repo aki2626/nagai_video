@@ -12,17 +12,23 @@
       = f.label :"メールアドレス"
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email"
-    .registration__field
-      = f.label :"パスワード"
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} 文字以上 )
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .registration__field
-      = f.label :"パスワード確認用"
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
+    - if @sns_id.present?
+      = hidden_field_tag :sns_auth, true
+    - else
+      .registration__field
+        = f.label :"パスワード"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上 )
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      .registration__field
+        = f.label :"パスワード確認用"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
     .registration__actions
       = f.submit "次の入力内容へ"
+    - if Rails.env == 'development'
+      = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
+      = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
   = render "devise/shared/links"
