@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   validates :nickname, presence: true
   has_one   :user_detail
+  has_many  :sns_credentials
   has_many  :videos
   has_many  :comments
   has_many  :mylists, dependent: :destroy
   has_many  :viewing_histories, dependent: :destroy 
-  has_many :sns_credentials
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
@@ -24,6 +24,6 @@ class User < ApplicationRecord
       sns.user = user
       sns.save
     end
-    user
+    { user: user, sns: sns }
   end
 end

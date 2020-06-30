@@ -18,6 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def authorization
     sns_info = User.from_omniauth(request.env["omniauth.auth"])
     @user = sns_info[:user]
+    # @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted? #ユーザー情報が登録済みなので、新規登録ではなくログイン処理を行う
       sign_in_and_redirect @user, event: :authentication
