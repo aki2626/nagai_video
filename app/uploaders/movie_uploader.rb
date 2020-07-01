@@ -4,12 +4,13 @@ class MovieUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   require 'streamio-ffmpeg'
 
-  # Choose what kind of storage to use for this uploader:
-  if Rails.env.development? || Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end
+  # # Choose what kind of storage to use for this uploader:
+  # if Rails.env.development? || Rails.env.test?
+  #   storage :file
+  # else
+  #   storage :fog
+  # end
+  storage :file
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
