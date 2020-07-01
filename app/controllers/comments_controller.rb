@@ -19,8 +19,10 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id)
   end
-
-  unless user_signed_in?
-    redirect_to root_path, notice: 'ログインまたは、ユーザー新規登録してください'
+  
+  def login_confirmation
+    unless user_signed_in?
+      redirect_to root_path, notice: 'ログインまたは、ユーザー新規登録してください'
+    end
   end
 end
