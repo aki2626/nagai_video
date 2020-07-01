@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: nagai_video_production
-  username: nagai_video
-  password: <%= ENV['NAGAI_VIDEO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
