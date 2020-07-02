@@ -12,7 +12,6 @@ class MovieUploader < CarrierWave::Uploader::Base
   # end
   storage :file
 
-  process.env.PATH += ':/var/task/bin';
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
