@@ -13,8 +13,7 @@ $(function(){
                           ${comment.text}
                         </div>
                       </div>
-                    </div>
-      `
+                    </div>`
       return html;
     } else {
       var html =  `<div class="comment">
@@ -28,8 +27,7 @@ $(function(){
                           ${comment.text}
                         </div>
                       </div>
-                    </div>
-      `
+                    </div>`
       return html;
     };
   }
