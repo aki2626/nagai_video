@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :login_confirmation, only: %i[show edit update update_user_detail]
+  before_action :login_confirmation, only: %i[show edit update]
   before_action :set_user, only: %i[show edit update update_user_detail]  
   
   def show
