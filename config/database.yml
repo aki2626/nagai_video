@@ -48,10 +48,14 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+  # <<: *default
+  # database: nagai_video_production
+  # # username: root
+  # username: nagai_video
+  # password: <%= ENV['NAGAI_VIDEO_DATABASE_PASSWORD'] %>
+  # # password: <%= ENV['DATABASE_PASSWORD'] %>
+  # socket: /var/lib/mysql/mysql.sock
   <<: *default
-  database: nagai_video_production
-  # username: root
-  username: nagai_video
-  password: <%= ENV['NAGAI_VIDEO_DATABASE_PASSWORD'] %>
-  # password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
