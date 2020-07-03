@@ -16,24 +16,26 @@
 ## 概要
 
 ### 動画閲覧
-<img width= "100" alt= "video_show" src="/public/images/video_show.gif">
+![show](https://user-images.githubusercontent.com/61491759/86476661-e940f280-bd81-11ea-8c6e-b046c3539968.gif)
 
 ### 投稿
-<video width= "100" alt= "video_new" src="/public/images/video_new.mp4">
+![video_new](https://user-images.githubusercontent.com/61491759/86476322-425c5680-bd81-11ea-9544-d3cceaf3053e.gif)
+
 
 ### 編集、削除
- <video width= "100" alt= "video_edit_delete" src="/public/images/video_edit_delete.mp4">
+![video_edit_delete](https://user-images.githubusercontent.com/61491759/86476291-3375a400-bd81-11ea-9ca3-46ebe356f88b.gif)
+
 
 ### コメント投稿
-<video width= "100" alt= "comment_create" src="/public/images/comments_create.mp4">
+![comment](https://user-images.githubusercontent.com/61491759/86476265-25c01e80-bd81-11ea-9116-fc3550e330bc.gif)
 
 ### ウィザード形式によるユーザー登録、編集
 ### 動画検索（キーワード、タグ）
- <video width= "100" alt= "search" src="/public/images/search.mp4">
+![search](https://user-images.githubusercontent.com/61491759/86476176-fc06f780-bd80-11ea-8d9e-21b2f4fdde8a.gif)
 
 ### 閲覧数によるランキング表示
 ### マイリスト作成、編集、削除
- <video width= "100" alt= "mylist" src="/public/images/mylist.mp4">
+![mylist](https://user-images.githubusercontent.com/61491759/86476213-0f19c780-bd81-11ea-99dd-9b1194e25311.gif)
 
 ## 実装予定の機能
 
