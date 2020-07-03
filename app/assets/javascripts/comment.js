@@ -3,7 +3,7 @@ $(function(){
     if (comment.user_image) {
       var html =  `<div class="comment">
                       <div class="comment__user_icon">
-                        ${comment.user_image}
+                        <img class="comment__user_icon" src="${comment.user_image}">
                       </div>
                       <div class="comment_right">
                         <div class="comment_right__username">
