@@ -18,25 +18,25 @@
 ### 動画閲覧
 ![show](https://user-images.githubusercontent.com/61491759/86476661-e940f280-bd81-11ea-8c6e-b046c3539968.gif)
 
-### 投稿
+### 動画投稿
 ![video_new](https://user-images.githubusercontent.com/61491759/86476322-425c5680-bd81-11ea-9544-d3cceaf3053e.gif)
 
 
-### 編集、削除
+### 動画編集、削除
 ![video_edit_delete](https://user-images.githubusercontent.com/61491759/86476291-3375a400-bd81-11ea-9ca3-46ebe356f88b.gif)
 
 
 ### コメント投稿
 ![comment](https://user-images.githubusercontent.com/61491759/86476265-25c01e80-bd81-11ea-9116-fc3550e330bc.gif)
 
-### ウィザード形式によるユーザー登録、編集
 ### 動画検索（キーワード、タグ）
 ![search](https://user-images.githubusercontent.com/61491759/86476176-fc06f780-bd80-11ea-8d9e-21b2f4fdde8a.gif)
 
-### 閲覧数によるランキング表示
+
 ### マイリスト作成、編集、削除
 ![mylist](https://user-images.githubusercontent.com/61491759/86476213-0f19c780-bd81-11ea-99dd-9b1194e25311.gif)
-
+### ウィザード形式によるユーザー登録、編集
+### 閲覧数によるランキング表示
 ## 実装予定の機能
 
 ### パンくず機能
