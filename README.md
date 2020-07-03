@@ -16,24 +16,24 @@
 ## 概要
 
 ### 動画閲覧
-<img width= "100" alt "video_show" src="/public/images/video_show.gif">
+<img width= "100" alt= "video_show" src="/public/images/video_show.gif">
 
 ### 投稿
-<video width= "100" alt "video_new" src="/public/images/video_new.mp4">
+<video width= "100" alt= "video_new" src="/public/images/video_new.mp4">
 
 ### 編集、削除
- <video width= "100" alt "video_edit_delete" src="/public/images/video_edit_delete.mp4">
+ <video width= "100" alt= "video_edit_delete" src="/public/images/video_edit_delete.mp4">
 
 ### コメント投稿
-<video width= "100" alt "comment_create" src="/public/images/comments_create.mp4">
+<video width= "100" alt= "comment_create" src="/public/images/comments_create.mp4">
 
 ### ウィザード形式によるユーザー登録、編集
 ### 動画検索（キーワード、タグ）
- <video width= "100" alt "search" src="/public/images/search.mp4">
+ <video width= "100" alt= "search" src="/public/images/search.mp4">
 
 ### 閲覧数によるランキング表示
 ### マイリスト作成、編集、削除
- <video width= "100" alt "mylist" src="/public/images/mylist.mp4">
+ <video width= "100" alt= "mylist" src="/public/images/mylist.mp4">
 
 ## 実装予定の機能
 
