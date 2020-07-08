@@ -1,5 +1,4 @@
 FROM ruby:2.5.1
-# FROM jrottenberg/ffmpeg
 ENV LANG C.UTF-8
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /nagai_video
@@ -8,6 +7,7 @@ COPY Gemfile /nagai_video/Gemfile
 COPY Gemfile.lock /nagai_video/Gemfile.lock
 # RUN gem install bundler
 RUN bundle install
+FROM jrottenberg/ffmpeg
 COPY . /nagai_video
 
 # Add a script to be executed every time the container starts.
