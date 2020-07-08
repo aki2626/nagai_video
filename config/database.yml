@@ -59,3 +59,5 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  username: nagai_video
+  password: <%= ENV['NAGAI_VIDEO_DATABASE_PASSWORD'] %>
