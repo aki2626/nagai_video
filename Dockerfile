@@ -6,6 +6,7 @@ RUN mkdir /nagai_video
 WORKDIR /nagai_video
 COPY Gemfile /nagai_video/Gemfile
 COPY Gemfile.lock /nagai_video/Gemfile.lock
+RUN gem install bundler
 RUN bundle install
 COPY . /nagai_video
 
