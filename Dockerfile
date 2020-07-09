@@ -3,12 +3,15 @@ FROM jrottenberg/ffmpeg
 ENV LANG C.UTF-8
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /nagai_video
-WORKDIR /nagai_video
-COPY Gemfile /nagai_video/Gemfile
-COPY Gemfile.lock /nagai_video/Gemfile.lock
+WORKDIR /tmp
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
 # RUN gem install bundler
 RUN bundle install
-COPY . /nagai_video
+ENV NAGAI_VIDEO_HOME /nagai_video
+RUN mkdir -p $NAGAI_VIDEO_HOME
+WORKDIR $NAGAI_VIDEO_HOME
+ADD . $NAGAI_VIDEO_HOME
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
