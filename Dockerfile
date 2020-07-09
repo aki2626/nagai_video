@@ -6,7 +6,6 @@ RUN mkdir /nagai_video
 WORKDIR /tmp
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
-RUN gem install bundler -v 1.17.3
 RUN bundle install
 ENV NAGAI_VIDEO_HOME /nagai_video
 RUN mkdir -p $NAGAI_VIDEO_HOME
