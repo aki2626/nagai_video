@@ -7,10 +7,10 @@ WORKDIR /tmp
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 RUN bundle install
-ENV NAGAI_VIDEO_HOME /nagai_video
-RUN mkdir -p $NAGAI_VIDEO_HOME
-WORKDIR $NAGAI_VIDEO_HOME
-ADD . $NAGAI_VIDEO_HOME
+ENV APP_HOME /nagai_video
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+ADD . $APP_HOME
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
