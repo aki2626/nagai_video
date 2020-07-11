@@ -1,7 +1,6 @@
 FROM ruby:2.5.1
-FROM jrottenberg/ffmpeg
 ENV LANG C.UTF-8
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client jrottenberg/ffmpeg
 RUN mkdir /nagai_video
 WORKDIR /tmp
 ADD Gemfile Gemfile
