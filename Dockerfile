@@ -3,13 +3,10 @@ ENV LANG C.UTF-8
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client ffmpeg
 RUN mkdir /myapp
 WORKDIR /myapp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
-ENV APP_HOME /nagai_video
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+COPY . /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
