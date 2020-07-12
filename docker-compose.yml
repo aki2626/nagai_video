@@ -15,7 +15,7 @@ services:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/nagai_video
+      - .:/naagi_video
     ports:
       - "3002:3000"
     depends_on:
